@@ -1,0 +1,19 @@
+{
+  "name": "projeto_final_gama_accenture",
+  "version": "1.0.0",
+  "description": "Sistema dinâmico que ajuda com as tarefas feitas em uma emissora de TV.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rebeccaalmeida1995/projeto_final_GAMA_ACCENTURE.git"
+  },
+  "author": "Rebecca Almeida, Rodrigo de Almeida, Emerson Caique, Deyvesson Carlos e Leandro Oliveira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rebeccaalmeida1995/projeto_final_GAMA_ACCENTURE/issues"
+  },
+  "homepage": "https://github.com/rebeccaalmeida1995/projeto_final_GAMA_ACCENTURE#readme"
+}
