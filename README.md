@@ -23,3 +23,9 @@ Utilizando a linguagem Javascript com biblioteca react, o contêiner redux e o e
   ->Deyvesson Carlos (  ) : {......}
   ->Leandro Oliveira (  ) : {......}
   ->Rebecca Almeida (  ) : {......}
+
+# Desenvolvimento
+  O que o grupo aprendeu?
+
+# Conflitos
+  o que o grupo entrou em conflito?
