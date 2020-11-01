@@ -1,60 +1,39 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-	entry: "./src/index.js",
+	entry: path.resolve("src", "index.jsx"),
 	output: {
-		path: path.resolve(__dirname, "dist"),
-		filename: "bundle.js",
-		chunkFilename: "[id].js",
-		publicPath: "",
-	},
-	resolve: {
-		extensions: [".js", ".jsx"],
+		path: path.resolve("dist"),
+		publicPath: "/",
 	},
 	module: {
 		rules: [
 			{
-				test: /\.js$/,
+				test: /\.jsx?$/,
 				loader: "babel-loader",
-				exclude: /node_modules/,
 			},
 			{
-				test: /\.css$/,
-				exclude: /node_modules/,
-				use: [
-					{ loader: "style-loader" },
-					{
-						loader: "css-loader",
-						options: {
-							modules: {
-								localIdentName:
-									"[name]__[local]___[hash:base64:5]",
-							},
-							sourceMap: true,
-						},
-					},
-					{
-						loader: "postcss-loader",
-						options: {
-							postcssOptions: {
-								plugins: [["autoprefixer", {}]],
-							},
-						},
-					},
-				],
+				test: /\.s[ac]ss$/,
+				use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
 			},
 			{
 				test: /\.(png|jpe?g|gif)$/,
-				loader: "url-loader?limit=10000&name=img/[name].[ext]",
+				loader: "file-loader",
 			},
 		],
 	},
 	plugins: [
 		new HtmlWebpackPlugin({
-			template: __dirname + "/src/index.html",
-			filename: "index.html",
-			inject: "body",
+			template: path.resolve("index.html"),
 		}),
+		new MiniCssExtractPlugin({}),
 	],
+	resolve: {
+		extensions: [".js", ".json", ".jsx"],
+	},
+	devServer: {
+		historyApiFallback: true,
+	},
 };

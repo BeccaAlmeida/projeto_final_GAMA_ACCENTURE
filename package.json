@@ -4,8 +4,9 @@
 	"description": "Sistema dinâmico que ajuda com as tarefas feitas em uma emissora de TV.",
 	"main": "index.js",
 	"scripts": {
-		"start": "webpack-dev-server --open --hot --mode development",
-		"build": "webpack --mode production"
+		"start": "webpack serve --mode development",
+		"build": "webpack --mode production",
+		"server": "npm run start"
 	},
 	"repository": {
 		"type": "git",
@@ -18,24 +19,32 @@
 	},
 	"homepage": "https://github.com/rebeccaalmeida1995/projeto_final_GAMA_ACCENTURE#readme",
 	"devDependencies": {
-		"@babel/core": "^7.7.5",
-		"@babel/preset-env": "^7.7.6",
-		"@babel/preset-react": "^7.7.4",
-		"autoprefixer": "^9.7.3",
-		"babel-loader": "^8.0.6",
-		"css-loader": "^3.3.2",
-		"file-loader": "^5.0.2",
-		"html-webpack-plugin": "^3.2.0",
-		"postcss": "^8.1.0",
-		"postcss-loader": "^4.0.2",
-		"style-loader": "^1.0.1",
-		"url-loader": "^3.0.0",
-		"webpack": "^4.41.3",
-		"webpack-cli": "^3.3.10",
-		"webpack-dev-server": "^3.9.0"
+		"@babel/core": "^7.12.3",
+		"@babel/plugin-proposal-class-properties": "^7.12.1",
+		"@babel/preset-env": "^7.12.1",
+		"@babel/preset-react": "^7.12.1",
+		"babel-loader": "^8.1.0",
+		"css-loader": "^5.0.0",
+		"file-loader": "^6.2.0",
+		"html-webpack-plugin": "^4.5.0",
+		"mini-css-extract-plugin": "^1.2.0",
+		"redux-logger": "^3.0.6",
+		"sass": "^1.27.0",
+		"sass-loader": "^10.0.4",
+		"webpack": "^5.2.0",
+		"webpack-cli": "^4.1.0",
+		"webpack-dev-server": "^3.11.0"
 	},
 	"dependencies": {
-		"react": "^16.12.0",
-		"react-dom": "^16.12.0"
+		"axios": "^0.21.0",
+		"bootstrap": "^4.5.3",
+		"classnames": "^2.2.6",
+		"prop-types": "^15.7.2",
+		"react": "^17.0.1",
+		"react-dom": "^17.0.1",
+		"react-redux": "^7.2.1",
+		"react-router-dom": "^5.2.0",
+		"redux": "^4.0.5",
+		"styled-components": "^5.2.0"
 	}
 }
