@@ -91,6 +91,10 @@ $transitionTime: all 0.3s;
 		}
 	}
 
+	.menu {
+		display: none;
+	}
+
 	transition: $transitionTime;
 	display: flex;
 	position: relative;
@@ -118,6 +122,10 @@ $transitionTime: all 0.3s;
 		.content {
 			margin-left: 0;
 			transition: $transitionTime;
+		}
+
+		.menu {
+			display: block;
 		}
 	}
 }

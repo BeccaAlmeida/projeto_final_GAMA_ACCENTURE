@@ -17,7 +17,9 @@ const App = (props) => (
 							<Menu />
 						</div>
 
-						<div className="col-12"></div>
+						<div className="col-12">
+							<BrowserRouter>{props.children}</BrowserRouter>
+						</div>
 					</div>
 				</div>
 			</div>
