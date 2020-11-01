@@ -1,11 +1,12 @@
 import React from "react";
-import { Switch, Route, Router } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import Login from "./login";
+import Painel from "./painel";
 
 const Pages = () => (
 	<Switch>
 		<Route path="/" exact>
-			<Login />
+			<Painel />
 		</Route>
 	</Switch>
 );
