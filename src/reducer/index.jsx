@@ -1,9 +1,9 @@
-import initialState from "../store/state";
+import initialState from "../store/initialState";
 
 const reducer = (state = initialState, action) => {
 	switch (action.type) {
 		default:
-			return null;
+			return state;
 	}
 };
 

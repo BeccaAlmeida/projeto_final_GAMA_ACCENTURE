@@ -6,6 +6,9 @@ import Painel from "./painel";
 const Pages = () => (
 	<Switch>
 		<Route path="/" exact>
+			<Login />
+		</Route>
+		<Route path="/painel" exact>
 			<Painel />
 		</Route>
 	</Switch>
