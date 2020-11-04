@@ -1,4 +1,3 @@
 export default {
-	auth: true,
+	auth: false,
 };
-

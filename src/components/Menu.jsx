@@ -33,6 +33,7 @@ class Menu extends Component {
 	render() {
 		return (
 			<StyledBurger
+				size={"2rem"}
 				className="my-3 menu"
 				onClick={() => this.changeMenu()}
 				open={this.state.open}
@@ -48,12 +49,12 @@ class Menu extends Component {
 const StyledBurger = styled.button`
 	position: absolute;
 	top: 5%;
-	left: 2rem;
+	left: ${({ size }) => size};
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
-	width: 2rem;
-	height: 2rem;
+	width: ${({ size }) => size};
+	height: ${({ size }) => size};
 	background: transparent;
 	border: none;
 	cursor: pointer;
@@ -65,7 +66,7 @@ const StyledBurger = styled.button`
 	}
 
 	div {
-		width: 2rem;
+		width: ${({ size }) => size};
 		height: 0.25rem;
 		background: #333131;
 		border-radius: 10px;
