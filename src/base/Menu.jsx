@@ -37,7 +37,7 @@ class Menu extends Component {
 				onClick={() => this.changeMenu()}
 				open={this.state.open}
 			>
-				<div><button> oi </button></div>
+				<div></div>
 				<div></div>
 				<div></div>
 			</StyledBurger>
