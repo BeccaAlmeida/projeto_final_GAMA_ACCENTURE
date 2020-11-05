@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import CustomGrid from "../../components/Grid";
-import { Grid, Paper } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import CustomCard from "../../components/Card";
