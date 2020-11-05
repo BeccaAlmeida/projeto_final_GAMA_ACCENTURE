@@ -1,9 +1,31 @@
 import React, { Component } from "react";
-import store from "../../store";
+import Highcharts from "highcharts";
+import HighchartsReact from "highcharts-react-official";
 
 class Painel extends Component {
+	getOptions() {
+		return {
+			chart: {
+				type: "spline",
+			},
+			title: {
+				text: "My chart",
+			},
+			series: [
+				{
+					data: [1, 2, 1, 4, 3, 6],
+				},
+			],
+		};
+	}
+
 	render() {
-		return <div>Home</div>;
+		return (
+			<HighchartsReact
+				highcharts={Highcharts}
+				options={this.getOptions()}
+			/>
+		);
 	}
 }
 
