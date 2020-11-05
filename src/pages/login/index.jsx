@@ -2,14 +2,36 @@ import React, { Component } from "react";
 import store from "../../store";
 import { Redirect } from "react-router-dom";
 import styled from "styled-components";
+import ACTIONS from "../../constants/actions";
+import { useSelector } from "react-redux";
 
 class Login extends Component {
+	constructor(props) {
+		super(props);
+	}
+
+	state = {
+		button: "Entrar",
+	};
+
 	isAuth() {
 		return store.getState().auth;
 	}
 
 	handlerSubmit($event) {
 		$event.preventDefault();
+		this.setState({
+			button: "Entrando...",
+		});
+
+		let form = new FormData($event.target);
+		const usuario = form.get("usuario");
+		const senha = form.get("senha");
+
+		store.dispatch({
+			type: ACTIONS.SET_AUTH,
+			data: true,
+		});
 	}
 
 	render() {
@@ -17,16 +39,25 @@ class Login extends Component {
 
 		return (
 			<Fullscreen>
-				<Box onSubmit={this.handlerSubmit} method="POST">
+				<Box onSubmit={this.handlerSubmit.bind(this)} method="POST">
 					<h1>login</h1>
-					<input
+					<InputForm
 						type="text"
-						name=""
-						placeholder="Nome de Usuario"
-					></input>
-					<input type="password" name="" placeholder="senha"></input>
+						name="usuario"
+						placeholder="Informe seu usuário"
+						autoComplete="off"
+					/>
 
-					<ButtonForm>Entrar</ButtonForm>
+					<InputForm
+						type="password"
+						name="senha"
+						placeholder="Informe sua senha"
+						autoComplete="off"
+					/>
+
+					<ButtonForm disabled={this.state.button === "Entrando..."}>
+						{this.state.button}
+					</ButtonForm>
 				</Box>
 			</Fullscreen>
 		);
@@ -39,6 +70,27 @@ const Fullscreen = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
+`;
+
+const InputForm = styled.input`
+	border: 0;
+	background: none;
+	display: block;
+	margin: 20px auto;
+	text-align: center;
+	color: white;
+	border: 1.5px solid #2980b9;
+	padding: 14px 10px;
+	width: 200px;
+	outline: none;
+	transition: 0.3s;
+	font-size: 14px;
+	border-radius: 30px;
+
+	&:focus {
+		width: 280px;
+		border-color: #906cda;
+	}
 `;
 
 const Box = styled.form`
@@ -54,28 +106,6 @@ const Box = styled.form`
 		text-transform: uppercase;
 		font-weight: 300;
 		font-size: 30px;
-	}
-
-	input[type="text"],
-	[type="password"] {
-		border: 0;
-		background: none;
-		display: block;
-		margin: 20px auto;
-		text-align: center;
-		color: white;
-		border: 1.5px solid #2980b9;
-		padding: 14px 10px;
-		width: 200px;
-		outline: none;
-		transition: 0.3s;
-		font-size: 14px;
-		border-radius: 30px;
-
-		&:focus {
-			width: 280px;
-			border-color: #906cda;
-		}
 	}
 `;
 
