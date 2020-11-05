@@ -4,8 +4,8 @@ import Menu from "./components/Menu";
 import styled from "styled-components";
 import { connect } from "react-redux";
 
-const App = (props) =>
-	props.auth ? (
+const App = (props) => {
+	return props.auth ? (
 		<Wrapper size="250px" transition="all 0.3s">
 			<Sidebar size="250px">
 				<SideBarItem>Painel</SideBarItem>
@@ -13,25 +13,16 @@ const App = (props) =>
 			</Sidebar>
 
 			<Content size="250px">
-				<div className="container-fluid">
-					<div className="row">
-						<div className="col-12 mb-3">
-							<Menu />
-						</div>
-
-						<div className="col-12">
-							<div className="container-fluid py-5">
-								<BrowserRouter>{props.children}</BrowserRouter>
-							</div>
-						</div>
-					</div>
-				</div>
+				<MenuContainer>
+					<Menu />
+				</MenuContainer>
+				<BrowserRouter>{props.children}</BrowserRouter>
 			</Content>
 		</Wrapper>
 	) : (
 		<BrowserRouter>{props.children}</BrowserRouter>
 	);
-
+};
 const SideBarItem = styled.div`
 	margin: 1rem;
 	padding: 0.8rem 0.9rem;
@@ -92,10 +83,15 @@ const Sidebar = styled.div.attrs({
 })`
 	width: 100%;
 	max-width: ${({ size }) => size};
-	position: absolute;
+	position: fixed;
 	height: 100vh;
 	background-color: #333131;
 	color: white;
+`;
+
+const MenuContainer = styled.div`
+	position: relative;
+	margin: 1rem 0 2rem 0;
 `;
 
 const mapStateToProps = (store) => {
