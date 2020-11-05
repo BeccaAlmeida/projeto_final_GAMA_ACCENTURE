@@ -49,6 +49,7 @@ class Menu extends Component {
 const StyledBurger = styled.button`
 	position: absolute;
 	top: 5%;
+	height: 32px;
 	left: ${({ size }) => size};
 	display: flex;
 	flex-direction: column;
