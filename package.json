@@ -4,9 +4,9 @@
 	"description": "Sistema dinâmico que ajuda com as tarefas feitas em uma emissora de TV.",
 	"main": "index.js",
 	"scripts": {
-		"start": "webpack serve --mode development",
+		"start": "node server.js",
 		"build": "webpack --mode production",
-		"server": "npm run start"
+		"server": "webpack serve --mode development"
 	},
 	"repository": {
 		"type": "git",
