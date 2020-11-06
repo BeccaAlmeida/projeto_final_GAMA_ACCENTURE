@@ -10,6 +10,7 @@ const App = (props) => {
 			<Sidebar size="250px">
 				<SideBarItem>Painel</SideBarItem>
 				<SideBarItem>Atores/Atrizes</SideBarItem>
+				<SideBarItem>Informações</SideBarItem>
 			</Sidebar>
 
 			<Content size="250px">
