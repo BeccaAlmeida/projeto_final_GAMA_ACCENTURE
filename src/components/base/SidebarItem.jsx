@@ -11,6 +11,7 @@ const SideBarItem = styled.div`
 	cursor: pointer;
 	color: white;
 	background: ${({ selected }) => (selected ? "#906cda" : "transparent")};
+	font-family: Poppins;
 `;
 
 export default function SidebarItem(props) {
