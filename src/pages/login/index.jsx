@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 import styled from "styled-components";
 import ACTIONS from "../../constants/actions";
 import { useSelector } from "react-redux";
-
+import NewUser from '../../components/formUsuario/LinkNewUser';
 class Login extends Component {
 	constructor(props) {
 		super(props);
@@ -59,6 +59,7 @@ class Login extends Component {
 						placeholder="Informe sua senha"
 						autoComplete="off"
 					/>
+					<NewUser />
 
 					<ButtonForm disabled={this.state.button === "Entrando..."}>
 						{this.state.button}

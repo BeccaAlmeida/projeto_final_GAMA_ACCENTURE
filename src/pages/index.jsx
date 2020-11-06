@@ -4,6 +4,7 @@ import Login from "./login";
 import Painel from "./painel";
 import Informacoes from "./informacoes";
 import novoElenco from "./newCast";
+import novoUsuario from "./newUser";
 import PrivateRoute from "../components/PrivateRoute";
 
 const Pages = () => (
