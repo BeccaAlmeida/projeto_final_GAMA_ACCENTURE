@@ -13,6 +13,7 @@ const App = (props) => {
 			<Sidebar size="250px">
 				<SideBarItem to="/painel">Painel</SideBarItem>
 				<SideBarItem to="/informacoes">Informações</SideBarItem>
+				<SideBarItem to="/newCast">+ Novo Elenco</SideBarItem>
 			</Sidebar>
 
 			<Content size="250px">
