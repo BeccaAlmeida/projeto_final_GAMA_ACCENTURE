@@ -32,6 +32,11 @@ class Login extends Component {
 			type: ACTIONS.SET_AUTH,
 			data: true,
 		});
+
+		store.dispatch({
+			type: ACTIONS.SET_ROUTE,
+			data: "/painel",
+		});
 	}
 
 	render() {
