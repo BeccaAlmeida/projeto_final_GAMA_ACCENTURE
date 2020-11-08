@@ -17,9 +17,9 @@ export default function GroupedSelect() {
   const classes = useStyles();
 
   return (
-    <div>    
-      <Button style={{marginTop: '25px'}} variant="contained" color="primary" disabled>
-        Monte seu Elenco
+    <div className="Button">    
+      <Button variant="contained" color="primary" disabled>
+        <h8 className="Title">Monte seu Elenco</h8>
       </Button>
       <Content>
         <div className="Card" style={{marginTop: '10px'}}>
