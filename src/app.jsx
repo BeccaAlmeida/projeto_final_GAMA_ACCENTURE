@@ -1,11 +1,11 @@
 import React from "react";
-import Menu from "./components/base/Menu";
+import Menu from "./components/layout/Menu";
 import { connect } from "react-redux";
-import Sidebar from "./components/base/Sidebar";
-import SideBarItem from "./components/base/SidebarItem";
-import Wrapper from "./components/base/Wrapper";
-import Content from "./components/base/Content";
-import MenuContainer from "./components/base/MenuContainer";
+import Sidebar from "./components/layout/Sidebar";
+import SideBarItem from "./components/layout/SidebarItem";
+import Wrapper from "./components/layout/Wrapper";
+import Content from "./components/layout/Content";
+import MenuContainer from "./components/layout/MenuContainer";
 
 const App = (props) => {
 	return props.auth ? (
