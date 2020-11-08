@@ -1,15 +1,14 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles} from '@material-ui/core/styles';
 import InputLabel from '@material-ui/core/InputLabel';
-import MenuItem from '@material-ui/core/MenuItem';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
-import Label from '@material-ui/core/FormLabel';
 import Content from '../base/Content';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles((theme) => ({
   formControl: {
-    margin: theme.spacing(1),
+    margin: theme.spacing(2),
     minWidth: 180,
   },
 }));
@@ -18,13 +17,13 @@ export default function GroupedSelect() {
   const classes = useStyles();
 
   return (
-    <div>
-      <Content>
-        <Label>Monte seu Elenco</Label>
-      </Content>
+    <div>    
+      <Button style={{marginTop: '25px'}} variant="contained" color="primary" disabled>
+        Monte seu Elenco
+      </Button>
       <Content>
         <FormControl className={classes.formControl}>
-          <InputLabel htmlFor="grouped-native-select">Diretor</InputLabel>
+          <InputLabel htmlFor="grouped-native-select" >Diretor</InputLabel>
           <Select native defaultValue="" id="diretor">
             <option aria-label="None" value="" />
               <option value={1}>1</option>

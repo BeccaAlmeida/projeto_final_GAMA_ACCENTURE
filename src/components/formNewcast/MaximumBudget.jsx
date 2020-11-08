@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
 		display: "flex",
 	},
 	content: {
-		flexGrow: 1,
+		flexGrow: 20,
 		overflow: "auto",
 	},
 	container: {
@@ -21,10 +21,10 @@ const useStyles = makeStyles((theme) => ({
 		padding: theme.spacing(2),
 		display: "flex",
 		overflow: "auto",
-		flexDirection: "column",
+		flexDirection: "row",
 	},
 	fixedHeight: {
-		height: 120,
+		height: 200,
 	},
 }));
 export default function Playground() {
@@ -41,7 +41,7 @@ export default function Playground() {
   const [value, setValue] = React.useState(null);
 
   return (
-    <div style={{ width: 300 }}>
+    <div className={classes.content} style={{ display: 'inline-flex' }}>
       
       <Autocomplete
         {...defaultProps}

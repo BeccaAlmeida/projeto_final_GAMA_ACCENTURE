@@ -12,19 +12,21 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function ContainedButtons() {
-
+ const classes = useStyles();
   return (
-    <ThemeProvider theme={theme}>
-      <Button variant="contained" color="primary">
-        Buscar elenco
-      </Button>
-    </ThemeProvider>
+    <div>
+      <ThemeProvider className={classes.root} theme={theme}>
+        <Button style={{ marginTop: '10px'}} variant="contained" color="primary">
+          Buscar elenco
+        </Button>
+      </ThemeProvider>
+    </div>
   );
 }
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#3f50b5',
+      main: '#906cda',
     },
   },
 });

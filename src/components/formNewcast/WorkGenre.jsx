@@ -9,53 +9,52 @@ const useStyles = makeStyles((theme) => ({
 		display: "flex",
 	},
 	content: {
-		flexGrow: 1,
+		flexGrow: 25,
 		overflow: "auto",
 	},
 	container: {
 		paddingTop: theme.spacing(4),
-		paddingBottom: theme.spacing(4),
+		paddingBottom: theme.spacing(10),
 		maxWidth: "100%",
 	},
 	paper: {
-		padding: theme.spacing(2),
-		display: "flex",
+		padding: theme.spacing(3),
+		display: "inline",
 		overflow: "auto",
-		flexDirection: "column",
+		flexDirection: "row",
 	},
 	fixedHeight: {
-		height: 120,
+		height: 180,
 	},
 }));
 export default function Playground() {
   const classes =  useStyles();
   const defaultProps = {
-    options: top100Films,
+    options: genres,
     getOptionLabel: (option) => option.workGenres,
   };
 
   const flatProps = {
-    options: top100Films.map((option) => option.workGenres),
+    options: genres.map((option) => option.workGenres),
   };
 
   const [value, setValue] = React.useState(null);
 
   return (
-    <div style={{ width: 300 }}>
-      
-      <Autocomplete
-        {...defaultProps}
-        id="auto-complete"
-        autoComplete
-        includeInputInList
-        renderInput={(params) => <TextField {...params} label="Gênero da Obra" margin="normal" />}
-      />
+    <div style={{display: 'inline-flex'}} className={classes.content}>
+        <Autocomplete
+          {...defaultProps}
+          id="auto-complete"
+          autoComplete
+          includeInputInList
+          renderInput={(params) => <TextField {...params} label="Gênero da Obra" margin="normal" />}
+        />
     </div>
   );
 }
 
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
-const top100Films = [
+const genres = [
   { workGenres: 'Ação' },
   { workGenres: 'Animação' },
   { workGenres: 'Comédia' },

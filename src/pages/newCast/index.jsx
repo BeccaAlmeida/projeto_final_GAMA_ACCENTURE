@@ -6,6 +6,7 @@ import CastSize from '../../components/formNewcast/CastSize';
 import Botao from '../../components/formNewcast/ButtonSearch';
 import CustomGrid from "../../components/Grid";
 import { Grid } from "@material-ui/core";
+import Content from '../../components/base/Content';
 
 const NewCast = () => (
 	<CustomGrid>
