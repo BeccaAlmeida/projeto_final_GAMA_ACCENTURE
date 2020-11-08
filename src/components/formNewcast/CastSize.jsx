@@ -19,7 +19,7 @@ export default function GroupedSelect() {
   return (
     <div className="Button">    
       <Button variant="contained" color="primary" disabled>
-        <h8 className="Title">Monte seu Elenco</h8>
+        <span className="Title">Monte seu Elenco</span>
       </Button>
       <Content>
         <div className="Card" style={{marginTop: '10px'}}>

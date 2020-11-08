@@ -41,11 +41,11 @@ export default function Playground() {
   const [value, setValue] = React.useState(null);
 
   return (
-    <div className={classes.content} style={{ display: 'inline-flex' }}>
+    <div className="Budgets">
       
       <Autocomplete
         {...defaultProps}
-        id="auto-complete"
+        id="auto-complete2"
         autoComplete
         includeInputInList
         renderInput={(params) => <TextField {...params} label="Orçamento Máximo" margin="normal" />}

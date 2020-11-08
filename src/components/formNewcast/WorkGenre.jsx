@@ -41,10 +41,10 @@ export default function Playground() {
   const [value, setValue] = React.useState(null);
 
   return (
-    <div style={{display: 'inline-flex'}} className={classes.content}>
+    <div className="Genres" >
         <Autocomplete
           {...defaultProps}
-          id="auto-complete"
+          id="auto-complete1"
           autoComplete
           includeInputInList
           renderInput={(params) => <TextField {...params} label="Gênero da Obra" margin="normal" />}

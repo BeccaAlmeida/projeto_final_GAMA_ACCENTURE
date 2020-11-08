@@ -6,7 +6,7 @@ const useStyles = makeStyles((theme) => ({
   
   root: {
     '& > *': {
-      margin: theme.spacing(3),
+      margin: theme.spacing(1),
     },
   },
 }));
@@ -15,8 +15,8 @@ export default function ContainedButtons() {
  const classes = useStyles();
   return (
     <div>
-      <ThemeProvider className={classes.root} theme={theme}>
-        <Button style={{ marginTop: '10px'}} variant="contained" color="primary">
+      <ThemeProvider theme={theme}>
+        <Button className={classes.root} style={{ marginTop: '10px'}} variant="contained" color="primary">
           Buscar elenco
         </Button>
       </ThemeProvider>
