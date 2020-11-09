@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function GroupedSelect() {
+export default function GroupedSelect(props) {
   const classes = useStyles();
 
   return (
@@ -24,173 +24,203 @@ export default function GroupedSelect() {
       <Content>
         <div className="Card" style={{marginTop: '10px'}}>
           <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="grouped-native-select" >Diretor</InputLabel>
+            <InputLabel htmlFor="grouped-native-select" >Produtor Executivo</InputLabel>
             <Select native defaultValue="" id="diretor">
               <option aria-label="None" value="" />
-                <option value={1}>1</option>
-                <option value={2}>2</option>
-                <option value={3}>3</option>
-                <option value={10}>4 á 10</option>
+                <option numberProdExecutivo={1}>1</option>
+                <option numberProdExecutivo={2}>2</option>
+                <option numberProdExecutivo={3}>3</option>
+                <option numberProdExecutivo={10}>4 á 10</option>
             </Select>
           </FormControl>
           <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="grouped-native-select">Continuísta</InputLabel>
+            <InputLabel htmlFor="grouped-native-select">Gerente de Locações</InputLabel>
             <Select native defaultValue="" id="diretor">
               <option aria-label="None" value="" />
-                <option value={1}>1</option>
-                <option value={2}>2</option>
-                <option value={3}>3</option>
-                <option value={10}>4 á 10</option>
+                <option numberGerLocacoes={1}>1</option>
+                <option numberGerLocacoes={2}>2</option>
+                <option numberGerLocacoes={3}>3</option>
+                <option numberGerLocacoes={10}>4 á 10</option>
             </Select>
           </FormControl>
           <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="grouped-native-select">Diretor de Fotográfia</InputLabel>
+            <InputLabel htmlFor="grouped-native-select">Diretor de Produção</InputLabel>
             <Select native defaultValue="" id="diretor">
               <option aria-label="None" value="" />
-                <option value={1}>1</option>
-                <option value={2}>2</option>
-                <option value={3}>3</option>
-                <option value={10}>4 á 10</option>
+                <option numberDirProd={1}>1</option>
+                <option numberDirProd={2}>2</option>
+                <option numberDirProd={3}>3</option>
+                <option numberDirProd={10}>4 á 10</option>
             </Select>
           </FormControl>
           <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="grouped-native-select">Fotográfo de Cena</InputLabel>
+            <InputLabel htmlFor="grouped-native-select">Produtor</InputLabel>
             <Select native defaultValue="" id="diretor">
               <option aria-label="None" value="" />
-                <option value={1}>1</option>
-                <option value={2}>2</option>
-                <option value={3}>3</option>
-                <option value={10}>4 á 10</option>
+                <option numberProdutor={1}>1</option>
+                <option numberProdutor={2}>2</option>
+                <option numberProdutor={3}>3</option>
+                <option numberProdutor={10}>4 á 10</option>
             </Select>
           </FormControl>
           <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="grouped-native-select">Diretor de produção</InputLabel>
+            <InputLabel htmlFor="grouped-native-select">Designer de Produção</InputLabel>
             <Select native defaultValue="" id="diretor">
               <option aria-label="None" value="" />
-                <option value={1}>1</option>
-                <option value={2}>2</option>
-                <option value={3}>3</option>
-                <option value={10}>4 á 10</option>
+                <option numberDesProd={1}>1</option>
+                <option numberDesProd={2}>2</option>
+                <option numberDesProd={3}>3</option>
+                <option numberDesProd={10}>4 á 10</option>
             </Select>
           </FormControl>
           <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="grouped-native-select">Assistente de Câmera</InputLabel>
+            <InputLabel htmlFor="grouped-native-select">Sonoplasta</InputLabel>
             <Select native defaultValue="" id="diretor">
               <option aria-label="None" value="" />
-                <option value={1}>1</option>
-                <option value={2}>2</option>
-                <option value={3}>3</option>
-                <option value={10}>4 á 10</option>
+                <option numberSonoplasta={1}>1</option>
+                <option numberSonoplasta={2}>2</option>
+                <option numberSonoplasta={3}>3</option>
+                <option numberSonoplasta={10}>4 á 10</option>
             </Select>
           </FormControl>
           <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="grouped-native-select">Clap loader</InputLabel>
+            <InputLabel htmlFor="grouped-native-select">Departamento de Arte</InputLabel>
             <Select native defaultValue="" id="diretor">
               <option aria-label="None" value="" />
-                <option value={1}>1</option>
-                <option value={2}>2</option>
-                <option value={3}>3</option>
-                <option value={10}>4 á 10</option>
+                <option numberDerArte={1}>1</option>
+                <option numberDerArte={2}>2</option>
+                <option numberDerArte={3}>3</option>
+                <option numberDerArte={10}>4 á 10</option>
+            </Select>
+          </FormControl>
+          <FormControl className={classes.formControl}>
+            <InputLabel htmlFor="grouped-native-select">Diretor de Arte</InputLabel>
+            <Select native defaultValue="" id="diretor">
+              <option aria-label="None" value="" />
+                <option numberDirArte={1}>1</option>
+                <option numberDirArte={2}>2</option>
+                <option numberDirArte={3}>3</option>
+                <option numberDirArte={10}>4 á 10</option>
+            </Select>
+          </FormControl>
+          <FormControl className={classes.formControl}>
+            <InputLabel htmlFor="grouped-native-select">Diretor de Elenco</InputLabel>
+            <Select native defaultValue="" id="diretor">
+              <option aria-label="None" value="" />
+                <option numberDirElenco={1}>1</option>
+                <option numberDirElenco={2}>2</option>
+                <option numberDirElenco={3}>3</option>
+                <option numberDirElenco={10}>4 á 10</option>
+            </Select>
+          </FormControl>
+          <FormControl className={classes.formControl}>
+            <InputLabel htmlFor="grouped-native-select">Storyboader</InputLabel>
+            <Select native defaultValue="" id="diretor">
+              <option aria-label="None" value="" />
+                <option numberStoryboarder={1}>1</option>
+                <option numberStoryboarder={2}>2</option>
+                <option numberStoryboarder={3}>3</option>
+                <option numberStoryboarder={10}>4 á 10</option>
             </Select>
           </FormControl>
           <FormControl className={classes.formControl}>
             <InputLabel htmlFor="grouped-native-select">Figurinista</InputLabel>
             <Select native defaultValue="" id="diretor">
               <option aria-label="None" value="" />
-                <option value={1}>1</option>
-                <option value={2}>2</option>
-                <option value={3}>3</option>
-                <option value={10}>4 á 10</option>
+                <option numberFigurinista={1}>1</option>
+                <option numberFigurinista={2}>2</option>
+                <option numberFigurinista={3}>3</option>
+                <option numberFigurinista={10}>4 á 10</option>
             </Select>
           </FormControl>
           <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="grouped-native-select">Guarda-Roupeira</InputLabel>
+            <InputLabel htmlFor="grouped-native-select">Departamento de Som</InputLabel>
             <Select native defaultValue="" id="diretor">
               <option aria-label="None" value="" />
-                <option value={1}>1</option>
-                <option value={2}>2</option>
-                <option value={3}>3</option>
-                <option value={10}>4 á 10</option>
+                <option numberDerSom={1}>1</option>
+                <option numberDerSom={2}>2</option>
+                <option numberDerSom={3}>3</option>
+                <option numberDerSom={10}>4 á 10</option>
             </Select>
           </FormControl>
           <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="grouped-native-select">Técnico de Som</InputLabel>
+            <InputLabel htmlFor="grouped-native-select">Maquiador</InputLabel>
             <Select native defaultValue="" id="diretor">
               <option aria-label="None" value="" />
-                <option value={1}>1</option>
-                <option value={2}>2</option>
-                <option value={3}>3</option>
-                <option value={10}>4 á 10</option>
+                <option numberMaquiador={1}>1</option>
+                <option numberMaquiador={2}>2</option>
+                <option numberMaquiador={3}>3</option>
+                <option numberMaquiador={10}>4 á 10</option>
             </Select>
           </FormControl>
           <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="grouped-native-select">Cenógrafo</InputLabel>
+            <InputLabel htmlFor="grouped-native-select">Diretor de Fotografia</InputLabel>
             <Select native defaultValue="" id="diretor">
               <option aria-label="None" value="" />
-                <option value={1}>1</option>
-                <option value={2}>2</option>
-                <option value={3}>3</option>
-                <option value={10}>4 á 10</option>
+                <option numberDirFoto={1}>1</option>
+                <option numberDirFoto={2}>2</option>
+                <option numberDirFoto={3}>3</option>
+                <option numberDirFoto={10}>4 á 10</option>
             </Select>
           </FormControl>
           <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="grouped-native-select">Cenotécnico</InputLabel>
+            <InputLabel htmlFor="grouped-native-select">Operador de Câmera</InputLabel>
             <Select native defaultValue="" id="diretor">
               <option aria-label="None" value="" />
-                <option value={1}>1</option>
-                <option value={2}>2</option>
-                <option value={3}>3</option>
-                <option value={10}>4 á 10</option>
+                <option numberOpCamera={1}>1</option>
+                <option numberOpCamera={2}>2</option>
+                <option numberOpCamera={3}>3</option>
+                <option numberOpCamera={10}>4 á 10</option>
             </Select>
           </FormControl>
           <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="grouped-native-select">Roterista</InputLabel>
+            <InputLabel htmlFor="grouped-native-select">Maquinista/Grip</InputLabel>
             <Select native defaultValue="" id="diretor">
               <option aria-label="None" value="" />
-                <option value={1}>1</option>
-                <option value={2}>2</option>
-                <option value={3}>3</option>
-                <option value={10}>4 á 10</option>
+                <option numberMaquinista={1}>1</option>
+                <option numberMaquinista={2}>2</option>
+                <option numberMaquinista={3}>3</option>
+                <option numberMaquinista={10}>4 á 10</option>
             </Select>
           </FormControl>
           <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="grouped-native-select">Argumentista</InputLabel>
+            <InputLabel htmlFor="grouped-native-select">Assistente de Direção</InputLabel>
             <Select native defaultValue="" id="diretor">
               <option aria-label="None" value="" />
-                <option value={1}>1</option>
-                <option value={2}>2</option>
-                <option value={3}>3</option>
-                <option value={10}>4 á 10</option>
+                <option numberAssDirecao={1}>1</option>
+                <option numberAssDirecao={2}>2</option>
+                <option numberAssDirecao={3}>3</option>
+                <option numberAssDirecao={10}>4 á 10</option>
             </Select>
           </FormControl>
           <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="grouped-native-select">Dialogista</InputLabel>
+            <InputLabel htmlFor="grouped-native-select">Fotográfo de Still</InputLabel>
             <Select native defaultValue="" id="diretor">
               <option aria-label="None" value="" />
-                <option value={1}>1</option>
-                <option value={2}>2</option>
-                <option value={3}>3</option>
-                <option value={10}>4 á 10</option>
+                <option numberFotografo={1}>1</option>
+                <option numberFotografo={2}>2</option>
+                <option numberFotografo={3}>3</option>
+                <option numberFotografo={10}>4 á 10</option>
             </Select>
           </FormControl>
           <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="grouped-native-select">Gas Man</InputLabel>
+            <InputLabel htmlFor="grouped-native-select">Decorador de Set</InputLabel>
             <Select native defaultValue="" id="diretor">
               <option aria-label="None" value="" />
-                <option value={1}>1</option>
-                <option value={2}>2</option>
-                <option value={3}>3</option>
-                <option value={10}>4 á 10</option>
+                <option numberDecorador={1}>1</option>
+                <option numberDecorador={2}>2</option>
+                <option numberDecorador={3}>3</option>
+                <option numberDecorador={10}>4 á 10</option>
             </Select>
           </FormControl>
           <FormControl className={classes.formControl}>
-            <InputLabel htmlFor="grouped-native-select">Pesquisador</InputLabel>
+            <InputLabel htmlFor="grouped-native-select">Ator/Atriz</InputLabel>
             <Select native defaultValue="" id="diretor">
               <option aria-label="None" value="" />
-                <option value={1}>1</option>
-                <option value={2}>2</option>
-                <option value={3}>3</option>
-                <option value={10}>4 á 10</option>
+                <option numberAtor={1}>1</option>
+                <option numberAtor={2}>2</option>
+                <option numberAtor={3}>3</option>
+                <option numberAtor={10}>4 á 10</option>
             </Select>
           </FormControl>
         </div>

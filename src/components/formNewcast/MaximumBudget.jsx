@@ -30,12 +30,12 @@ const useStyles = makeStyles((theme) => ({
 export default function Playground() {
   const classes =  useStyles();
   const defaultProps = {
-    options: top100Films,
+    options: Budgets,
     getOptionLabel: (option) => option.maximumBudget,
   };
 
   const flatProps = {
-    options: top100Films.map((option) => option.maximumBudget),
+    options: Budgets.map((option) => option.maximumBudget),
   };
 
   const [value, setValue] = React.useState(null);
@@ -55,7 +55,7 @@ export default function Playground() {
 }
 
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
-const top100Films = [
+const Budgets = [
   { maximumBudget: 'R$ 0,00 á R$ 10,000.00' },
   { maximumBudget: 'R$ 10,000.00 á R$ 100,000.00' },
   { maximumBudget: 'R$ 100,000.00 á R$ 1,000,000.00' },
