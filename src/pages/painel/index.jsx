@@ -1,11 +1,16 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import CustomGrid from "../../components/Grid";
 import { Grid } from "@material-ui/core";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
 import CustomCard from "../../components/Card";
+import { Loading } from "../../components/Loading";
 
 class Painel extends Component {
+	state = {
+		show: false,
+	};
+
 	getOptions() {
 		return {
 			chart: {
@@ -22,7 +27,17 @@ class Painel extends Component {
 		};
 	}
 
+	componentDidMount() {
+		setTimeout(() => {
+			this.setState({
+				show: true,
+			});
+		}, 1000);
+	}
+
 	render() {
+		if (!this.state.show) return <Loading />;
+
 		return (
 			<CustomGrid>
 				<Grid lg={6} md={6} xs={12} item>

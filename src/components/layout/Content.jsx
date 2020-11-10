@@ -5,4 +5,5 @@ export default styled.div.attrs({
 })`
 	width: 100%;
 	margin-left: ${({ size }) => size};
+	position: relative;
 `;
