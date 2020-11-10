@@ -14,6 +14,7 @@ const SideBarItem = styled.div`
 	background: ${({ selected }) => (selected ? "#906cda" : "transparent")};
 	font-family: Poppins;
 	text-align: left;
+	font-size: 16px !important;
 `;
 
 export default function SidebarItem(props) {
