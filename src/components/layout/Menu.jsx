@@ -1,33 +1,11 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import menuService from "../../service/menu";
+import store from "../../store";
 
 class Menu extends Component {
-	state = {
-		open: false,
-	};
-
-	getElementMenu() {
-		return document.getElementsByClassName("wrapper")[0];
-	}
-
-	setOpen(value) {
-		this.setState({
-			open: value,
-		});
-	}
-
 	changeMenu() {
-		if (this.menuIsOpen()) {
-			this.getElementMenu().classList.remove("open");
-			this.setOpen(false);
-		} else {
-			this.getElementMenu().classList.add("open");
-			this.setOpen(true);
-		}
-	}
-
-	menuIsOpen() {
-		return this.getElementMenu().classList.contains("open");
+		return menuService.changeMenu();
 	}
 
 	render() {
@@ -36,7 +14,7 @@ class Menu extends Component {
 				size={"2rem"}
 				className="my-3 menu"
 				onClick={() => this.changeMenu()}
-				open={this.state.open}
+				open={store.getState().menu}
 			>
 				<div></div>
 				<div></div>

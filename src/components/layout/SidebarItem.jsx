@@ -3,6 +3,7 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import store from "../../store";
 import ACTIONS from "../../constants/actions";
+import menuService from "../../service/menu";
 
 const SideBarItem = styled.div`
 	margin: 1rem;
@@ -12,6 +13,8 @@ const SideBarItem = styled.div`
 	color: white;
 	background: ${({ selected }) => (selected ? "#906cda" : "transparent")};
 	font-family: Poppins;
+	text-align: left;
+	font-size: 16px !important;
 `;
 
 export default function SidebarItem(props) {
@@ -23,6 +26,7 @@ export default function SidebarItem(props) {
 			data: props.to,
 		});
 
+		menuService.changeMenu();
 		history.push(props.to);
 	};
 

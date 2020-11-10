@@ -16,8 +16,6 @@ const Pages = () => (
 		<PrivateRoute path="/informacoes" component={Informacoes} />
 		<PrivateRoute path="/newCast" component={NovoElenco} />
 		<PrivateRoute path="/informacoes" component={BuscarElenco} />
-
-
 	</Switch>
 );
 

@@ -16,7 +16,7 @@ export default styled.div.attrs({
 		.content {
 			transition: ${({ transition }) => transition};
 			margin-left: ${({ size }) => size};
-			overflow-x: hidden;
+			overflow: hidden;
 		}
 	}
 
@@ -33,6 +33,7 @@ export default styled.div.attrs({
 		.content {
 			margin-left: 0;
 			transition: ${({ transition }) => transition};
+			overflow: hidden;
 		}
 
 		.menu {

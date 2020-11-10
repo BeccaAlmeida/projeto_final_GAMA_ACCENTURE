@@ -7,6 +7,8 @@ const reducer = (state = initialState, action) => {
 			return Object.assign({}, state, { auth: action.data });
 		case ACTIONS.SET_ROUTE:
 			return Object.assign({}, state, { route: action.data });
+		case ACTIONS.SET_MENU:
+			return Object.assign({}, state, { menu: action.data });
 
 		default:
 			return state;
