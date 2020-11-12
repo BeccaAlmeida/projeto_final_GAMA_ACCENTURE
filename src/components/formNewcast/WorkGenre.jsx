@@ -4,31 +4,8 @@ import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme) => ({
-	root: {
-		display: "flex",
-	},
-	content: {
-		flexGrow: 25,
-		overflow: "auto",
-	},
-	container: {
-		paddingTop: theme.spacing(4),
-		paddingBottom: theme.spacing(10),
-		maxWidth: "100%",
-	},
-	paper: {
-		padding: theme.spacing(3),
-		display: "inline",
-		overflow: "auto",
-		flexDirection: "row",
-	},
-	fixedHeight: {
-		height: 180,
-	},
-}));
 export default function Playground() {
-  const classes =  useStyles();
+  
   const defaultProps = {
     options: genres,
     getOptionLabel: (option) => option.workGenres,

@@ -4,7 +4,7 @@ import Login from "./login";
 import Painel from "./painel";
 import Informacoes from "./informacoes";
 import NovoElenco from "./newCast";
-import novoUsuario from "./newUser";
+import Cep from "./cep";
 import BuscarElenco from "../components/formNewcast/ButtonSearch";
 
 import PrivateRoute from "../components/PrivateRoute";
@@ -16,6 +16,7 @@ const Pages = () => (
 		<PrivateRoute path="/informacoes" component={Informacoes} />
 		<PrivateRoute path="/newCast" component={NovoElenco} />
 		<PrivateRoute path="/informacoes" component={BuscarElenco} />
+		<PrivateRoute path="/cep" component={Cep} />
 	</Switch>
 );
 

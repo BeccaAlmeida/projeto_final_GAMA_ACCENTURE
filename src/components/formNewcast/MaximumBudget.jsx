@@ -3,31 +3,7 @@ import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme) => ({
-	root: {
-		display: "flex",
-	},
-	content: {
-		flexGrow: 20,
-		overflow: "auto",
-	},
-	container: {
-		paddingTop: theme.spacing(4),
-		paddingBottom: theme.spacing(4),
-		maxWidth: "100%",
-	},
-	paper: {
-		padding: theme.spacing(2),
-		display: "flex",
-		overflow: "auto",
-		flexDirection: "row",
-	},
-	fixedHeight: {
-		height: 200,
-	},
-}));
 export default function Playground() {
-	const classes = useStyles();
 	const defaultProps = {
 		options: Budgets,
 		getOptionLabel: (option) => option.maximumBudget,

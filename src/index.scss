@@ -5,6 +5,7 @@ body {
     font-family: Poppins;
     background: #eee;
     text-align: center;
+    flex-wrap: wrap;
 }
 
 .h-view {
@@ -21,13 +22,15 @@ body {
 
 .Genres {
     width: 18%;
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
     text-align: center;
 }
 
 .Budgets {
     width: 18%;
-    display: inline-flex;
+    display: flex;
+    flex-direction: column;
     text-align: center;
 }
 
@@ -40,9 +43,34 @@ body {
 }
 
 .CustomDate {
-    display: inline-flex;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
 }
 
-#date {
-    height: 96px;
+.Card {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.Button {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Genres {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Budgets {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
 }
