@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
-import Api from './Api';
+import ApiUser from '../../service/api';
 
 class NewUser extends Component{
-    componentDidMount(props) {
-        Api.post('/actress/create', {
-            "name": "Nome",
-            "gender": "Gênero",
-            "price": 0,
+    componentDidMount() {
+        ApiUser.post('/actress/create', {
+            "name": "Rebecca",
+            "gender": "Comédia",
+            "price": "200.000.00",
             "relevance": 0,
-            "genre": "Gênero que atua",
+            "genre": "Comédia",
             "status": true,
             "user": {
                 "login": "login",
@@ -17,18 +17,23 @@ class NewUser extends Component{
         }).then ((response) => {
             console.log(response.data);
         }).catch((err) => {
-            console.log(err)
+            console.log(err);
         }); 
-        Api.get('/actress/list').then ((response) => {
+        ApiUser.get('/actress/list').then ((response) => {
             console.log(response.data);
         }).catch((err) => {
-            console.log(err)
-        })
+            console.log(err);
+        });
     }
     render(){ 
         return (
             <div>
+                <h1>Novo usuario</h1> 
+                <div>
+                    <label htmlFor="">Nome:</label>
+                    <input type="text"/>
                     
+                </div>
             </div>
         );
     };
