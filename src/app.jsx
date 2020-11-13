@@ -15,7 +15,7 @@ const App = (props) => {
 					<SideBarItem to="/painel">Painel</SideBarItem>
 					<SideBarItem to="/informacoes">Informações</SideBarItem>
 					<SideBarItem to="/newCast">+ Novo Elenco</SideBarItem>
-					<SideBarItem to= "/cep">cep</SideBarItem>
+					<SideBarItem to= "/newUser">Novo Usuario</SideBarItem>
 				</Sidebar>
 
 				<Content size="250px">

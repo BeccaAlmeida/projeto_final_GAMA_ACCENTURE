@@ -1,7 +1,7 @@
 import Axios from 'axios';
 
 const Api =  Axios.create({
-    baseURL: 'https://viacep.com.br/ws/01001000/json/'
+    baseURL: 'https://remotecontroller.herokuapp.com'
 });
 
 export default Api;

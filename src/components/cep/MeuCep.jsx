@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
-import ApiCep from './Api';
+//import ApiCep from './Api';
+import NewUser from '../formUsuario/NewUser';
 import regeneratorRuntime from "regenerator-runtime";
 
 class Api extends Component{
 
     state= {
-        cep: [],
+        cep: null,
     }
     
-    async componentDidMout() {
-        const response = await ApiCep.get('');
-        console.log(response.data);
-
-        this.setState({ cep: response.data});
-    }
+    /*componentDidMount() {
+        ApiCep.get('').then ((response) => {
+            console.log(response.data);
+            this.setState({ cep: response.data });
+        }); 
+        
+    }*/
     render(){ 
         return (
             <div>
-                <h1>cep</h1> 
+                <h1>{this.state.cep?.logradouro}</h1> 
+                <NewUser />
             </div>
         );
     };
