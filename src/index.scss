@@ -12,12 +12,11 @@ body {
     height: 100vh;
 }
 
-.Card {
+#card {
     background-color: #906cda;
 }
 
 .Button {
-    display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     margin: 10px;
@@ -45,4 +44,12 @@ body {
 .producer {
     margin-right: 10px;
     margin-bottom: 10px;
+}
+
+.combo-box-demo2 {
+    width: 100;
+}
+
+.combo-box-demo1 {
+    width: 100;
 }

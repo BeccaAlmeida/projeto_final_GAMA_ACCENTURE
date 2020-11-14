@@ -26,7 +26,7 @@ export default function ContainedButtons() {
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: '#906cda',
+      main: '#fff',
     },
   },
 });
