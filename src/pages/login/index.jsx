@@ -22,36 +22,46 @@ class Login extends Component {
 	handlerSubmit($event) {
 		$event.preventDefault();
 
-		let form = new FormData($event.target);
-		const login = form.get("usuario");
-		const password = form.get("senha");
+		// let form = new FormData($event.target);
+		// const login = form.get("usuario");
+		// const password = form.get("senha");
 
-		if (!login || !password) return;
+		// if (!login || !password) return;
 
 		this.setState({
 			button: "Entrando...",
 		});
 
-		api.post("/login", {
-			login,
-			password,
-		})
-			.then((res) => {
-				console.log(res);
+		// api.post("/login", {
+		// 	login,
+		// 	password,
+		// })
+		// 	.then((res) => {
+		// 		console.log(res);
 
-				store.dispatch({
-					type: ACTIONS.SET_AUTH,
-					data: true,
-				});
+		// 		store.dispatch({
+		// 			type: ACTIONS.SET_AUTH,
+		// 			data: true,
+		// 		});
 
-				store.dispatch({
-					type: ACTIONS.SET_ROUTE,
-					data: "/painel",
-				});
-			})
-			.catch((err) => {
-				console.log(err);
-			});
+		// 		store.dispatch({
+		// 			type: ACTIONS.SET_ROUTE,
+		// 			data: "/painel",
+		// 		});
+		// 	})
+		// 	.catch((err) => {
+		// 		console.log(err);
+		// 	});
+
+		store.dispatch({
+			type: ACTIONS.SET_AUTH,
+			data: true,
+		});
+
+		store.dispatch({
+			type: ACTIONS.SET_ROUTE,
+			data: "/painel",
+		});
 	}
 
 	render() {

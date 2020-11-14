@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-	baseURL: "localhost:8080",
+	baseURL:
+		"https://cors-anywhere.herokuapp.com/https://remotecontroller.herokuapp.com",
 });
 
 export default api;
