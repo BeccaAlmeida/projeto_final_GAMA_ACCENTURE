@@ -2,7 +2,6 @@ import React from "react";
 import ReserveCast from "../../components/formNewcast/ReserveCast";
 import CustomGrid from "../../components/Grid";
 import { Grid } from "@material-ui/core";
-import Card from '../../components/Card';
 
 const NewCast = () => (
 	<CustomGrid>
