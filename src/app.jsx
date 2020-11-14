@@ -16,6 +16,7 @@ const App = (props) => {
 					<SideBarItem to="/informacoes">Informações</SideBarItem>
 					<SideBarItem to="/newCast">+ Novo Elenco</SideBarItem>
 					<SideBarItem to= "/newUser">Novo Usuario</SideBarItem>
+					<SideBarItem to="/list">Lista de Atores Por name</SideBarItem> 
 				</Sidebar>
 
 				<Content size="250px">

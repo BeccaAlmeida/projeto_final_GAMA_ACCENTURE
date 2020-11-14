@@ -5,6 +5,7 @@ import Painel from "./painel";
 import Informacoes from "./informacoes";
 import NovoElenco from "./newCast";
 import NewUser from "./newUser";
+import ListName from '../components/list/List';
 import PrivateRoute from "../components/PrivateRoute";
 
 const Pages = () => (
@@ -14,6 +15,7 @@ const Pages = () => (
 		<PrivateRoute path="/informacoes" component={Informacoes} />
 		<PrivateRoute path="/newCast" component={NovoElenco} />
 		<PrivateRoute path="/newUser" component={NewUser} />
+		<PrivateRoute path="/list" component={ListName} />
 	</Switch>
 );
 

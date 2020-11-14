@@ -29,10 +29,13 @@ class NewUser extends Component{
         return (
             <div>
                 <h1>Novo usuario</h1> 
-                <div>
+                <div className="row">
                     <label htmlFor="">Nome:</label>
-                    <input type="text"/>
-                    
+                    <input type="text" value={this.setState.name} />
+                </div>
+                <div>
+                <label htmlFor="">Gênero que atua:</label>
+                <input type="" value={this.setState.genre} />
                 </div>
             </div>
         );
