@@ -7,6 +7,7 @@ class Api extends Component{
 
     state= {
         cep: null,
+        user: null,
     }
     
     /*componentDidMount() {
@@ -20,7 +21,6 @@ class Api extends Component{
         return (
             <div>
                 <h1>{this.state.cep?.logradouro}</h1> 
-                <NewUser />
             </div>
         );
     };

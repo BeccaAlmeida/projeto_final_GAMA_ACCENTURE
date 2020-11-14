@@ -1,20 +1,13 @@
 import React from "react";
-import WorkGenre from "../../components/formNewcast/WorkGenre";
-import MaximumBudget from "../../components/formNewcast/MaximumBudget";
-import CastSize from "../../components/formNewcast/CastSize";
-import Botao from "../../components/formNewcast/ButtonSearch";
+import ReserveCast from "../../components/formNewcast/ReserveCast";
 import CustomGrid from "../../components/Grid";
 import { Grid } from "@material-ui/core";
-import DateSize from "../../components/formNewcast/DateSize";
+import Card from '../../components/Card';
 
 const NewCast = () => (
 	<CustomGrid>
 		<Grid>
-			<WorkGenre />
-			<MaximumBudget />
-			<DateSize />
-			<CastSize />
-			<Botao />
+			<ReserveCast />
 		</Grid>
 	</CustomGrid>
 );

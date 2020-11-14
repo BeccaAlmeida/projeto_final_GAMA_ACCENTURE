@@ -20,57 +20,14 @@ body {
     margin: 10px;
 }
 
-.Genres {
-    width: 18%;
+.textField {
+    margin: 0 auto;
+    width: 200;
+}
+
+.formControl {
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
-    text-align: center;
-}
-
-.Budgets {
-    width: 18%;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-}
-
-#auto-complete1 {
-    width: 110px;
-}
-
-#auto-complete2 {
-    width: 110px;
-}
-
-.CustomDate {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.Card {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.Button {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.Genres {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.Budgets {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: column;
-    justify-content: center;
+    min-width: 180;
 }
