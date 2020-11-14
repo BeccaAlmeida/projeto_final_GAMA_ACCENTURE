@@ -10,6 +10,9 @@ const reducer = (state = initialState, action) => {
 		case ACTIONS.SET_MENU:
 			return Object.assign({}, state, { menu: action.data });
 
+		case ACTIONS.SET_USER:
+			return Object.assign({}, state, { usuario: action.data });
+
 		default:
 			return state;
 	}
