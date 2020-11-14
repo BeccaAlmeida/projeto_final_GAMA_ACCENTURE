@@ -47,8 +47,6 @@ class ListUser extends Component {
         if(atores.length === 0){ return <h1>Não há atores</h1>}
         
 		return (
-            
-            
 			<TableContainer component={Paper}>
 				<Table aria-label="simple table">
 					<TableHead>
@@ -59,8 +57,8 @@ class ListUser extends Component {
 							<TableCell align="right"><button style={btn} onClick={sortedPrice.bind(this)}>Preço</button></TableCell>
 						</TableRow>
 					</TableHead>
-                        <TableBody>
-                            {atores.map((ator) => (
+                    <TableBody>
+                        {atores.map((ator) => (
 							<TableRow key={ator.name}>
 								<TableCell component="th" scope="ator">
 									{ator.name}
@@ -73,13 +71,12 @@ class ListUser extends Component {
 								</TableCell>
 								<TableCell align="right">
 									{ator.price} R$
-									</TableCell>
+								</TableCell>
 							</TableRow>
-                            ))}
-					    </TableBody>
-                        </Table>
-                        </TableContainer>
-                    
+                        ))}
+					</TableBody>
+                </Table>
+            </TableContainer>                    
 		)
 	}
 }

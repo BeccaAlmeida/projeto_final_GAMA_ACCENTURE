@@ -1,45 +1,71 @@
-import React, { Component } from 'react';
-import ApiUser from '../../service/api';
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import ButtonSave from './ButtonSave';
+import Button from '@material-ui/core/Button';
+import useForm from '../../hooks/useForm';
 
-class NewUser extends Component{
-    componentDidMount() {
-        ApiUser.post('/actress/create', {
-            "name": "Rebecca",
-            "gender": "Comédia",
-            "price": "200.000.00",
-            "relevance": 0,
-            "genre": "Comédia",
-            "status": true,
-            "user": {
-                "login": "login",
-                "password": "senha"
-            }
-        }).then ((response) => {
-            console.log(response.data);
-        }).catch((err) => {
-            console.log(err);
-        }); 
-        ApiUser.get('/actress/list').then ((response) => {
-            console.log(response.data);
-        }).catch((err) => {
-            console.log(err);
-        });
-    }
-    render(){ 
-        return (
-            <div>
-                <h1>Novo usuario</h1> 
-                <div className="row">
-                    <label htmlFor="">Nome:</label>
-                    <input type="text" value={this.setState.name} />
-                </div>
-                <div>
-                <label htmlFor="">Gênero que atua:</label>
-                <input type="" value={this.setState.genre} />
-                </div>
-            </div>
-        );
-    };
-        
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& > *': {
+      margin: theme.spacing(1),
+      width: '25ch',
+    },
+  },
+}));
+
+export default function BasicTextFields() {
+  const [{ values, loading }, handleChange, handleSubmit] = useForm();
+
+  const saveActress = () => {
+    console.log(values);
+  };
+  const classes = useStyles();
+
+  return (
+    <div>
+        <h1>Meus Dados</h1>
+      <form onSubmit={handleSubmit(saveActress)} className={classes.root} noValidate autoComplete="off">
+        <TextField 
+            onChange={handleChange}
+            className="actress" 
+            id="{actress.name}" 
+            type="text" 
+            label="Ator" 
+            placeholder="name Actress" 
+            variant="outlined" 
+        />
+        <TextField 
+            onChange={handleChange}
+            className="price" 
+            id="{actress.price}" 
+            type="price" 
+            label="Preço" 
+            placeholder="price" 
+            variant="outlined" 
+        />
+        <TextField 
+            onChange={handleChange}
+            className="email" 
+            id="{actress.email}" 
+            type="email" 
+            label="E-mail" 
+            placeholder="email" 
+            variant="outlined" 
+        />
+        <TextField 
+            onChange={handleChange}
+            className="password" 
+            id="{actress.password}" 
+            type="password" 
+            label="Senha" 
+            placeholder="Password" 
+            variant="outlined" 
+        />
+      </form>
+      <div>
+        <ButtonSave />
+      </div>
+    </div>
+  );
 }
-export default NewUser;
