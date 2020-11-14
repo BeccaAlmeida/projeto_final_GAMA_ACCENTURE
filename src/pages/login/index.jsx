@@ -3,8 +3,9 @@ import store from "../../store";
 import { Redirect } from "react-router-dom";
 import styled from "styled-components";
 import ACTIONS from "../../constants/actions";
-import { useSelector } from "react-redux";
-import NewUser from '../../components/formUsuario/LinkNewUser';
+import NewUser from "../../components/formUsuario/LinkNewUser";
+import api from "../../service/api";
+
 class Login extends Component {
 	constructor(props) {
 		super(props);
@@ -20,13 +21,37 @@ class Login extends Component {
 
 	handlerSubmit($event) {
 		$event.preventDefault();
+
+		// let form = new FormData($event.target);
+		// const login = form.get("usuario");
+		// const password = form.get("senha");
+
+		// if (!login || !password) return;
+
 		this.setState({
 			button: "Entrando...",
 		});
 
-		let form = new FormData($event.target);
-		const usuario = form.get("usuario");
-		const senha = form.get("senha");
+		// api.post("/login", {
+		// 	login,
+		// 	password,
+		// })
+		// 	.then((res) => {
+		// 		console.log(res);
+
+		// 		store.dispatch({
+		// 			type: ACTIONS.SET_AUTH,
+		// 			data: true,
+		// 		});
+
+		// 		store.dispatch({
+		// 			type: ACTIONS.SET_ROUTE,
+		// 			data: "/painel",
+		// 		});
+		// 	})
+		// 	.catch((err) => {
+		// 		console.log(err);
+		// 	});
 
 		store.dispatch({
 			type: ACTIONS.SET_AUTH,
@@ -59,6 +84,7 @@ class Login extends Component {
 						placeholder="Informe sua senha"
 						autoComplete="off"
 					/>
+
 					<NewUser />
 
 					<ButtonForm disabled={this.state.button === "Entrando..."}>

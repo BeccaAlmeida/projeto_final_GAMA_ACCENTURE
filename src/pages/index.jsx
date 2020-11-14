@@ -4,8 +4,8 @@ import Login from "./login";
 import Painel from "./painel";
 import Informacoes from "./informacoes";
 import NovoElenco from "./newCast";
-import NewUser from "./newUser";
-import ListName from '../components/list/List';
+import NewActress from "./newActress";
+import NewProducer from "./newProducer";
 import PrivateRoute from "../components/PrivateRoute";
 
 const Pages = () => (
@@ -14,8 +14,8 @@ const Pages = () => (
 		<PrivateRoute path="/painel" component={Painel} />
 		<PrivateRoute path="/informacoes" component={Informacoes} />
 		<PrivateRoute path="/newCast" component={NovoElenco} />
-		<PrivateRoute path="/newUser" component={NewUser} />
-		<PrivateRoute path="/list" component={ListName} />
+		<PrivateRoute path="/newActress" component={NewActress} />
+		<PrivateRoute path="/newProcucer" component={NewProducer} />
 	</Switch>
 );
 
