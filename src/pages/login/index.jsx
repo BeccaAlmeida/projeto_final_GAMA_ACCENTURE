@@ -3,8 +3,7 @@ import store from "../../store";
 import { Redirect } from "react-router-dom";
 import styled from "styled-components";
 import ACTIONS from "../../constants/actions";
-import NewUser from "../../components/formUsuario/LinkNewUser";
-import api from "../../service/api";
+import authService from "../../service/auth";
 
 class Login extends Component {
 	constructor(props) {
@@ -13,6 +12,7 @@ class Login extends Component {
 
 	state = {
 		button: "Entrar",
+		error: null,
 	};
 
 	isAuth() {
@@ -22,46 +22,39 @@ class Login extends Component {
 	handlerSubmit($event) {
 		$event.preventDefault();
 
-		// let form = new FormData($event.target);
-		// const login = form.get("usuario");
-		// const password = form.get("senha");
-
-		// if (!login || !password) return;
+		if (this.state.button !== "Entrar") return;
 
 		this.setState({
-			button: "Entrando...",
+			...this.state,
+			error: null,
 		});
 
-		// api.post("/login", {
-		// 	login,
-		// 	password,
-		// })
-		// 	.then((res) => {
-		// 		console.log(res);
+		let form = new FormData($event.target);
+		const login = form.get("usuario");
+		const password = form.get("senha");
 
-		// 		store.dispatch({
-		// 			type: ACTIONS.SET_AUTH,
-		// 			data: true,
-		// 		});
-
-		// 		store.dispatch({
-		// 			type: ACTIONS.SET_ROUTE,
-		// 			data: "/painel",
-		// 		});
-		// 	})
-		// 	.catch((err) => {
-		// 		console.log(err);
-		// 	});
-
-		store.dispatch({
-			type: ACTIONS.SET_AUTH,
-			data: true,
+		this.setState({
+			button: "Validando...",
 		});
 
-		store.dispatch({
-			type: ACTIONS.SET_ROUTE,
-			data: "/painel",
-		});
+		authService
+			.auth(login, password)
+			.then(() => {
+				store.dispatch({
+					type: ACTIONS.SET_ROUTE,
+					data: "/painel",
+				});
+			})
+			.catch((error) => {
+				this.setState({
+					button: "Entrar",
+				});
+
+				this.setState({
+					...this.state,
+					error,
+				});
+			});
 	}
 
 	render() {
@@ -85,7 +78,9 @@ class Login extends Component {
 						autoComplete="off"
 					/>
 
-					<NewUser />
+					<Error>{this.state.error ?? this.state.error}</Error>
+
+					{/* <NewUser /> */}
 
 					<ButtonForm disabled={this.state.button === "Entrando..."}>
 						{this.state.button}
@@ -156,6 +151,11 @@ const ButtonForm = styled.button`
 	font-size: 14px;
 	border-radius: 30px;
 	cursor: pointer;
+`;
+
+const Error = styled.p`
+	color: white;
+	height: 1rem;
 `;
 
 export default Login;
