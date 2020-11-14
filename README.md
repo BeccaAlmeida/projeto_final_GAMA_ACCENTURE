@@ -3,15 +3,15 @@
 
 ## Team :facepunch:
 
- [@RebeccaAlmeida](https://github.com/DeMesquita) 
+ [@RebeccaAlmeida](https://github.com/rebeccaalmeida1995) 
  
- [@RodrigoAlmeida](https://github.com/SpinnerZ)
+ [@RodrigoAlmeida](https://github.com/Rodrigoas3)
  
- [@EmersonCaique](https://github.com/mgsoares2020)
+ [@EmersonCaique](https://github.com/EmersonCaique)
  
- [@DeyvessonCarlos](https://github.com/JoelMarSDS)
+ [@DeyvessonCarlos](https://github.com/Deyvesson)
  
- [@LeandroOliveira](https://github.com/lucaslfarias)
+ [@LeandroOliveira]()
  
 
 ## Descrição do projeto :clapper:
@@ -33,22 +33,19 @@
 
 ## API :key:
 
-:heavy_check_mark: Spring boot com a seguintes dependências: Spring Data JPA, Spring Security, Spring Web.
+:heavy_check_mark: React com a seguintes dependências: Wabpack, Babel, redux, sass, axios, express e material-ui.
 
 :heavy_check_mark: Banco de dados: H2.
 
-:heavy_check_mark: Ferramenta de gerenciamento de dependência de projeto: Gradle.
-
-:heavy_check_mark: Para os tratamentos de exceções foi decidido usar uma abordagem centralizada. Foi inserido também uma customização para retornar o status https devido para o momento do erro.
-
+:heavy_check_mark: Ferramenta de gerenciamento de dependência de projeto: NPM.
 
 ## Planning :scroll:
 
 :trophy: Divisão e priorização de tarefas.
 
-:trophy: Durante os dias de desenvolvimento utilizamos ferramentas como Github, Trello, Slack, XMind e Jitsi para para nos auxiliar.
+:trophy: Durante os dias de desenvolvimento utilizamos ferramentas como Github, Trello, Slack e Discord para nos auxiliar.
 
-:trophy: Encontros todos os dias, onde discutíamos pendências, dificuldades e estratégias para as próximas tarefas. Após o encontro, retornávamos para nossas atividades e quando necessário, fazíamos pair programming.
+:trophy: Encontros todos os dias, onde discutíamos pendências, dificuldades e estratégias para as próximas tarefas. Após o encontro, retornávamos para nossas atividades e quando necessário.
 
 :trophy: Não definimos um scrum master para semana, todos acompanhávamos o desenvolvimento do projeto.
 
@@ -56,11 +53,10 @@
 ## GitHub :open_file_folder:
 
 - [x] Mantivemos a main como branch principal.
-- [x] Cada tarefa tinha que ser feita em nova branch, após a conclusão, era aberta a pull Request e um outro membro da equipe precisava aprovar, assim podendo "mergear" para a branch principal.
 
 ## Requirements:
 
-Para iniciar a API será necessário ter em sua máquina instalado a [versão JDK11 e configurar as variáveis de ambiente](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html).
+Para iniciar a API será necessário ter em sua máquina instalado a [versão JDK11 e configurar as variáveis de ambiente](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html), o Node.js (https://nodejs.org/en/) e utilizar o npm i para baixar todos as dependencias.
 
 
 ## Endpoints:
@@ -204,10 +200,10 @@ Filtros:
 
 ## Experiência:
 
-As maiores dificuldades foram relacionadas à modelagem, divisão de tarefas e ordem de execução das atividades.
+As maiores dificuldades foram relacionadas à pouco conhecimento tecnico, divisão de tarefas e ordem de execução das atividades.
 Precisamos remodelar o projeto e redistribuir as entregas mais de uma vez.
 
-E vimos que nossa maior produtividade e aprendizado foi utilizando pair programming.
+E vimos que nossa maior produtividade e aprendizado foi utilizando a comunição e o trello.
 A troca de experiências, qualidade de código e até velocidade de desenvolvimento foram muito proveitosas com essa técnica.
 
 A equipe foi bastante agradável e unida, proporcionando sempre um ambiente leve e bem humorado, onde cada um supriu a deficiência existente no outro.
