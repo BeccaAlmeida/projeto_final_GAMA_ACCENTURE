@@ -19,7 +19,7 @@ class ListUser extends Component {
 		Api.get('/actress/list').then((response) => {
 			console.log(response.data);
 			this.setState({ atores: response.data })
-		})
+		}).catch(this.setState({atores: [{name: "Não a atores", price: "", status: true, relevance: "" }]}))
 	}
 
 	render() {
