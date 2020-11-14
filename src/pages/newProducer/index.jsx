@@ -1,14 +1,12 @@
 import React from "react";
-import NewProducer from "../../components/formUsuario/NewProducer";
+import Producer from "../../components/formUsuario/NewProducer";
 import CustomGrid from "../../components/Grid";
 import { Grid } from "@material-ui/core";
 
-const NewCast = () => (
+const NewProducer = () => (
 	<CustomGrid>
-		<Grid>
-			<NewProducer />
-		</Grid>
+			<Producer />
 	</CustomGrid>
 );
 
-export default NewCast;
+export default NewProducer;
