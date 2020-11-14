@@ -21,6 +21,7 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     margin: 10px;
+    margin-top: 20px;
 }
 
 .textField {
@@ -33,4 +34,14 @@ body {
     display: flex;
     flex-direction: column;
     min-width: 180;
+}
+
+.actress {
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.producer {
+    margin-right: 10px;
+    margin-bottom: 10px;
 }

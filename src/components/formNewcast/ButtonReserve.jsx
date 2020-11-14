@@ -16,7 +16,7 @@ export default function ContainedButtons() {
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <Button className={classes.root} style={{ marginTop: '10px'}, {marginLeft: '10px'}} variant="contained" color="primary">
+        <Button className={classes.root}  variant="contained" color="primary">
           Salvar
         </Button>
       </ThemeProvider>

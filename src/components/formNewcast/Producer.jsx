@@ -15,7 +15,7 @@ export default function Asynchronous() {
 		}
 
 		(async () => {
-			const response = await api.get("/producer/{0}");
+			const response = await api.get("/producer/");
 			setOptions(response.data);
 		})();
 	}, [loading]);
@@ -27,36 +27,38 @@ export default function Asynchronous() {
 	}, [open]);
 
 	return (
-		<Autocomplete
-			style={{ width: 300 }}
-			open={open}
-			onOpen={() => setOpen(true)}
-			onClose={() => setOpen(false)}
-			getOptionSelected={(option, value) => option.id === value.id}
-			getOptionLabel={(option) => option.name}
-			options={options}
-			loading={loading}
-			renderInput={(params) => (
-				<TextField
-					{...params}
-					label="Ator/Atriz"
-					variant="outlined"
-					InputProps={{
-						...params.InputProps,
-						endAdornment: (
-							<React.Fragment>
-								{loading ? (
-									<CircularProgress
-										color="inherit"
-										size={20}
-									/>
-								) : null}
-								{params.InputProps.endAdornment}
-							</React.Fragment>
-						),
-					}}
-				/>
-			)}
-		/>
+		<div className="producer">
+			<Autocomplete
+				style={{ width: 300 }}
+				open={open}
+				onOpen={() => setOpen(true)}
+				onClose={() => setOpen(false)}
+				getOptionSelected={(option, value) => option.id === value.id}
+				getOptionLabel={(option) => option.name}
+				options={options}
+				loading={loading}
+				renderInput={(params) => (
+					<TextField
+						{...params}
+						label="Produtor"
+						variant="outlined"
+						InputProps={{
+							...params.InputProps,
+							endAdornment: (
+								<React.Fragment>
+									{loading ? (
+										<CircularProgress
+											color="inherit"
+											size={20}
+										/>
+									) : null}
+									{params.InputProps.endAdornment}
+								</React.Fragment>
+							),
+						}}
+					/>
+				)}
+			/>
+		</div>
 	);
 }
