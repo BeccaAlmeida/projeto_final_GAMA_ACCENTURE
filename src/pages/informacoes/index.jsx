@@ -13,24 +13,7 @@ const useStyles = makeStyles({
 });
 
 
-function createData(name, status, relevancia, preco) {
-	return { name, status, relevancia, preco };
-}
-
-const rows = [
-	createData("Ator1", "Disponível", 6.0, 10000),
-	createData("Atriz2", "Atuando", 9.0, 15000),
-	createData("Ator3", "Atuando", 16.0, 12000),
-	createData("Atriz4", "Atuando", 3.7, 8000),
-	createData("Ator5", "Disponível", 16.0, 13000),
-];
-
-
-
 export default function BasicTable() {
-	
-	
-	const classes = useStyles();
 
 	return (
 		<CustomGrid>
