@@ -1,10 +1,10 @@
-// *https://www.registers.service.gov.uk/registers/country/use-the-api*
+// *https://www.registers.service.gov.uk/registers/actress/use-the-api*
 import fetch from 'cross-fetch';
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import ApiActress from '../../service/api';
+import Apiactress from '../../service/api';
 import regeneratorRuntime from "regenerator-runtime";
 
 function sleep(delay = 0) {
@@ -14,7 +14,7 @@ function sleep(delay = 0) {
 }
 
 export default function Asynchronous() {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState();
   const [options, setOptions] = React.useState([]);
   const loading = open && options.length === 0;
 
@@ -24,15 +24,20 @@ export default function Asynchronous() {
     if (!loading) {
       return undefined;
     }
-    //https://country.register.gov.uk/records.json?page-size=5000
 
     (async () => {
-      const response = await fetch('https://remotecontroller.herokuapp.com/actress/name/');
+      const url =  Apiactress.get('/actress/list').then((response) => {
+        console.log(response.data);
+        this.setOptions({options: response.data});
+      });
+
+      const response = await fetch(url);
       await sleep(1e3); // For demo purposes.
-      const name = await response.json();
+      const actress = await response.json();
+      console.log(response)
 
       if (active) {
-        setOptions(Object.keys(name).map((key) => name[key].item[0]));
+        setOptions(Object.keys(actress).map((key) => actress[key].name[0]));
       }
     })();
 
@@ -58,8 +63,8 @@ export default function Asynchronous() {
       onClose={() => {
         setOpen(false);
       }}
-      getOptionSelected={(option, value) => option.name === value.name}
-      getOptionLabel={(option) => option.name}
+      getOptionSelected={(option, value) => option.actress === value.actress}
+      getOptionLabel={(option) => option.actress}
       options={options}
       loading={loading}
       renderInput={(params) => (

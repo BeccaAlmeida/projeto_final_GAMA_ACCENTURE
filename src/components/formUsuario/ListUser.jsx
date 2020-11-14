@@ -8,8 +8,6 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 
-
-
 class ListUser extends Component {
 	state = {
 		atores: []
