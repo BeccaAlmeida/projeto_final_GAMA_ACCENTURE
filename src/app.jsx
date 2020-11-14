@@ -9,20 +9,24 @@ import MenuContainer from "./components/layout/MenuContainer";
 
 const App = (props) => {
 	return props.auth ? (
-		<Wrapper size="250px" transition="all 0.3s">
-			<Sidebar size="250px">
-				<SideBarItem to="/painel">Painel</SideBarItem>
-				<SideBarItem to="/informacoes">Informações</SideBarItem>
-				<SideBarItem to="/newCast">+ Novo Elenco</SideBarItem>
-			</Sidebar>
+		<div>
+			<Wrapper size="250px" transition="all 0.3s">
+				<Sidebar size="250px">
+					<SideBarItem to="/painel">Painel</SideBarItem>
+					<SideBarItem to="/informacoes">Informações</SideBarItem>
+					<SideBarItem to="/newCast">+ Novo Elenco</SideBarItem>
+					<SideBarItem to= "/newUser">Novo Usuario</SideBarItem>
+					<SideBarItem to="/list">Lista de Atores Por name</SideBarItem> 
+				</Sidebar>
 
-			<Content size="250px">
-				<MenuContainer>
-					<Menu />
-				</MenuContainer>
-				{props.children}
-			</Content>
-		</Wrapper>
+				<Content size="250px">
+					<MenuContainer>
+						<Menu />
+					</MenuContainer>
+					{props.children}
+				</Content>
+			</Wrapper>
+		</div>
 	) : (
 		props.children
 	);

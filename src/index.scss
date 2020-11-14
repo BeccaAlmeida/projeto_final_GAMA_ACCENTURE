@@ -5,6 +5,7 @@ body {
     font-family: Poppins;
     background: #eee;
     text-align: center;
+    flex-wrap: wrap;
 }
 
 .h-view {
@@ -19,30 +20,14 @@ body {
     margin: 10px;
 }
 
-.Genres {
-    width: 18%;
-    display: inline-flex;
-    text-align: center;
+.textField {
+    margin: 0 auto;
+    width: 200;
 }
 
-.Budgets {
-    width: 18%;
-    display: inline-flex;
-    text-align: center;
-}
-
-#auto-complete1 {
-    width: 110px;
-}
-
-#auto-complete2 {
-    width: 110px;
-}
-
-.CustomDate {
-    display: inline-flex;
-}
-
-#date {
-    height: 96px;
+.formControl {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-width: 180;
 }

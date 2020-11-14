@@ -17,7 +17,7 @@ export default function ContainedButtons() {
     <div>
       <ThemeProvider theme={theme}>
         <Button className={classes.root} style={{ marginTop: '10px'}} variant="contained" color="primary">
-          Buscar elenco
+          Save
         </Button>
       </ThemeProvider>
     </div>
