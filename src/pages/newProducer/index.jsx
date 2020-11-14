@@ -1,12 +1,12 @@
 import React from "react";
-import ReserveCast from "../../components/formNewcast/ReserveCast";
+import NewProducer from "../../components/formUsuario/NewProducer";
 import CustomGrid from "../../components/Grid";
 import { Grid } from "@material-ui/core";
 
 const NewCast = () => (
 	<CustomGrid>
 		<Grid>
-			<ReserveCast />
+			<NewProducer />
 		</Grid>
 	</CustomGrid>
 );

@@ -1,9 +1,10 @@
 import React from 'react';
 import ListActress from './Actress';
-import ListProducer from './Producer';
 import DateTime from './DateTime';
 import Grid from '../Grid';
 import ButtonReserv from './ButtonReserve';
+import Producer from './Producer';
+import regeneratorRuntime from "regenerator-runtime";
 
 function ReserveCast() {
     return (
@@ -11,7 +12,7 @@ function ReserveCast() {
             <Grid >
                 <DateTime />
                 <ListActress />
-                <ListProducer />
+                <Producer />
                 <ButtonReserv />
             </Grid>
         </div>

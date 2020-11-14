@@ -15,10 +15,11 @@ const App = (props) => {
 					<SideBarItem to="/painel">Painel</SideBarItem>
 					<SideBarItem to="/informacoes">Informações</SideBarItem>
 					<SideBarItem to="/newCast">+ Novo Elenco</SideBarItem>
-					<SideBarItem to="/newUser">Novo Usuario</SideBarItem>
 					<SideBarItem to="/list">
 						Lista de Atores Por name
 					</SideBarItem>
+					<SideBarItem to="/newActress">+ Novo Usuario</SideBarItem>
+					<SideBarItem to="/newProducer">+ Novo produtor</SideBarItem>
 				</Sidebar>
 
 				<Content size="250px">
