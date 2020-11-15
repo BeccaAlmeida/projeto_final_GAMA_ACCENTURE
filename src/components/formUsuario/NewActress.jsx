@@ -31,18 +31,18 @@ export default function BasicTextFields() {
   const saveActress = (event) => {
     event.preventDefault();
       Api.post('/actress/create', 
-      {
-        "name": values.values.nome,
-        "gender": values.values.gender,
-        "price": values.values.price,
-        "relevance": values.values.relevance,
-        "genre": values.values.genre,
-        "status": false,
-        "user": {
-            "login": values.values.login,
-            "password": values.values.password
+        {
+            "name": values.values.nome,
+            "gender": values.values.gender,
+            "price": values.values.price,
+            "relevance": values.values.relevance,
+            "genre": values.values.genre,
+            "status": false,
+            "user": {
+                "login": values.values.login,
+                "password": values.values.password
+            }
         }
-     }
       ).then((response) => {
         console.log(response.data)
       })
