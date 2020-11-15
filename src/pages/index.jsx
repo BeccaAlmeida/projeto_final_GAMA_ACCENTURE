@@ -12,10 +12,10 @@ const Pages = () => (
 	<Switch>
 		<Route path="/" component={Login} exact />
 		<PrivateRoute path="/painel" component={Painel} />
-		<PrivateRoute path="/informacoes" component={Informacoes} />
-		<PrivateRoute path="/newCast" component={NovoElenco} />
-		<PrivateRoute path="/newActress" component={NewActress} />
-		<PrivateRoute path="/newProducer" component={NewProducer} />
+		<PrivateRoute path="/informacoes" component={Informacoes} />,
+		<PrivateRoute path="/newCast" component={NovoElenco} />,
+		<PrivateRoute path="/newActress" component={NewActress} />,
+		<PrivateRoute path="/newProducer" component={NewProducer} />,
 	</Switch>
 );
 

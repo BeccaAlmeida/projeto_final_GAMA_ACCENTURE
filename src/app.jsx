@@ -8,11 +8,13 @@ import Content from "./components/layout/Content";
 import MenuContainer from "./components/layout/MenuContainer";
 
 const App = (props) => {
-	return props.auth ? (
-		<div>
-			<Wrapper size="250px" transition="all 0.3s">
-				<Sidebar size="250px">
-					<SideBarItem to="/painel">Painel</SideBarItem>
+	const { usuario } = props;
+	const { typeUserEnumeration } = usuario;
+
+	const getSideBar = () => {
+		if (typeUserEnumeration === 2) {
+			return (
+				<React.Fragment>
 					<SideBarItem to="/informacoes">Informações</SideBarItem>
 					<SideBarItem to="/newCast">+ Novo Elenco</SideBarItem>
 					<SideBarItem to="/list">
@@ -20,6 +22,18 @@ const App = (props) => {
 					</SideBarItem>
 					<SideBarItem to="/newActress">+ Novo Usuario</SideBarItem>
 					<SideBarItem to="/newProducer">+ Novo produtor</SideBarItem>
+				</React.Fragment>
+			);
+		}
+	};
+
+	console.log("typeUserEnumeration", typeUserEnumeration);
+	return props.auth ? (
+		<div>
+			<Wrapper size="250px" transition="all 0.3s">
+				<Sidebar size="250px">
+					<SideBarItem to="/painel">Painel</SideBarItem>
+					{getSideBar()}
 				</Sidebar>
 
 				<Content size="250px">
