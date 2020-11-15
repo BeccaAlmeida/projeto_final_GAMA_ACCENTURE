@@ -17,9 +17,6 @@ const App = (props) => {
 				<React.Fragment>
 					<SideBarItem to="/informacoes">Informações</SideBarItem>
 					<SideBarItem to="/newCast">+ Novo Elenco</SideBarItem>
-					<SideBarItem to="/list">
-						Lista de Atores Por name
-					</SideBarItem>
 					<SideBarItem to="/newActress">+ Novo Usuario</SideBarItem>
 					<SideBarItem to="/newProducer">+ Novo produtor</SideBarItem>
 				</React.Fragment>
