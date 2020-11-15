@@ -1,12 +1,12 @@
 import React from 'react';
 import { makeStyles, createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
+import Autocomplete from '@material-ui/lab/Autocomplete';
 import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
-import ButtonSave from './ButtonSave';
 import Button from '@material-ui/core/Button';
 import useForm from '../../hooks/useForm';
+import Api from '../../service/api';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -23,40 +23,47 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const [{ values, loading }, handleChange, handleSubmit] = useForm();
 export default function BasicTextFields() {
+  const [values, handleChange] = useForm();
 
-  /*const saveProducer = () => {
+  const saveProducer = (event) => {
+    console.log(values)
+    event.preventDefault();
       Api.post('/producer/create', 
         {
-          "name": "Nome",
+          "name": values.values.nome,
           "user": {
-            "login": "login",
-            "password": "senha"
+            "login": values.values.login,
+            "password": values.values.senha
       }}
       ).then((response) => {
         console.log(response.data)
       })
+      .catch(error => {
+        console.log(error.response)
+    });
     console.log(values);
-  };*/
+  }
 
   const classes = useStyles();
   return (
     <div>
       <Card className={classes.root} id="card">
         <CardContent>
-          <form onSubmit={() => handleSubmit(saveProducer)} className={classes.root} autoComplete="off">
+          <form className={classes.root} onSubmit={saveProducer} autoComplete="off">
             <TextField 
-                onChange={handleChange}
+                name="nome"
+                onChange={(event) => handleChange (event)}
                 className="producer" 
-                id="{producer.id}" 
+                id="{producer.name}" 
                 type="text" 
                 label="Produtor" 
                 placeholder="name Producer" 
                 variant="outlined" 
             />
             <TextField 
-                onChange={handleChange}
+                name="login"
+                onChange={(event) => handleChange (event)}
                 className="login" 
                 id="{producer.login}" 
                 type="email" 
@@ -65,7 +72,8 @@ export default function BasicTextFields() {
                 variant="outlined" 
             />
             <TextField 
-                onChange={handleChange}
+                name="senha"
+                onChange={(event) => handleChange (event)}
                 className="senha" 
                 id="{producer.password}" 
                 type="password" 
@@ -73,16 +81,21 @@ export default function BasicTextFields() {
                 placeholder="Password" 
                 variant="outlined" 
             />
+            <ThemeProvider theme={theme}>
+            <Button className={classes.root} type="submit" variant="contained" color="primary">
+              Salvar
+            </Button>
+            </ThemeProvider>
           </form>
         </CardContent>
-        <CardActions>
-            <ThemeProvider theme={theme}>
-              <Button className={classes.root} onClick={loading ? "Enviando..." : "Enviar"}  variant="contained" color="primary">
-                Salvar
-              </Button>
-          </ThemeProvider>
-        </CardActions>
       </Card>
     </div>
   );
 }
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#fff',
+    },
+  },
+});

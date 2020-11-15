@@ -16,11 +16,12 @@ body {
     background-color: #906cda;
 }
 
-.Button {
+#Button {
     flex-direction: column;
     flex-wrap: wrap;
     margin: 10px;
     margin-top: 20px;
+    width: 120px;
 }
 
 .textField {

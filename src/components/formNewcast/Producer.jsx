@@ -15,8 +15,8 @@ export default function Asynchronous() {
 		}
 
 		(async () => {
-			const response = await api.get("/producer/");
-			setOptions(response.data);
+			const response = await api.get("/producer/18");
+			setOptions([response.data]);
 		})();
 	}, [loading]);
 
@@ -40,7 +40,7 @@ export default function Asynchronous() {
 				renderInput={(params) => (
 					<TextField
 						{...params}
-						label="Produtor"
+						label="Produtor/Produtora"
 						variant="outlined"
 						InputProps={{
 							...params.InputProps,

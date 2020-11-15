@@ -5,6 +5,7 @@ const useForm = (callback) => {
   const [loading, setLoading] = useState(false);
 
   const handleChange = (event) => {
+    console.log(event);
     const auxValues = { ...values };
     auxValues[event.target.name] = event.target.value;
     setValues(auxValues);
