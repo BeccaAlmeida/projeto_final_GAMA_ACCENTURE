@@ -1,9 +1,9 @@
 import React from 'react';
 import { makeStyles, createMuiTheme, ThemeProvider  } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
+import useForm from '../../hooks/useForm';
 
 const useStyles = makeStyles((theme) => ({
-  
   root: {
     '& > *': {
       margin: theme.spacing(1),
@@ -16,7 +16,7 @@ export default function ContainedButtons() {
   return (
     <div>
       <ThemeProvider theme={theme}>
-        <Button className={classes.root}  variant="contained" color="primary">
+        <Button className={classes.root} type="submit" onClick="useForm()" variant="contained" color="primary">
           Salvar
         </Button>
       </ThemeProvider>

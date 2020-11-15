@@ -15,7 +15,7 @@ const Pages = () => (
 		<PrivateRoute path="/informacoes" component={Informacoes} />
 		<PrivateRoute path="/newCast" component={NovoElenco} />
 		<PrivateRoute path="/newActress" component={NewActress} />
-		<PrivateRoute path="/newProcucer" component={NewProducer} />
+		<PrivateRoute path="/newProducer" component={NewProducer} />
 	</Switch>
 );
 
