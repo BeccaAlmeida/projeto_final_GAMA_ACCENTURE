@@ -32,15 +32,38 @@ class ListUser extends Component {
 			cursor: "pointer",
 			padding: "10px",
         }
-        
+    
         function sortedPrice() {
-            console.log("Chamou")
+			console.log("Chamou")
+			
             atores.sort(function(a,b)  {
                 return a.price < b.price ? -1 : a.price > b.price ? 1 : 0;
             })
-            this.setState({atores})
+			this.setState({atores})
+			
             
-        }
+		}
+		
+		function sortedRelevance(){
+			atores.sort(function(a,b)  {
+                return a.relevance > b.relevance ? -1 : a.relevance < b.relevance ? 1 : 0;
+            })
+            this.setState({atores})
+		}
+
+		function sortedStatus(){
+			atores.sort(function(a,b)  {
+                return a.status > b.status ? -1 : a.status < b.status ? 1 : 0;
+            })
+            this.setState({atores})
+		}
+
+		function sortedName() {
+			atores.sort(function(a,b)  {
+                return a.name < b.name ? -1 : a.name > b.name ? 1 : 0;
+            })
+            this.setState({atores})
+		}
 
         const { atores } = this.state;
         
@@ -51,9 +74,9 @@ class ListUser extends Component {
 				<Table aria-label="simple table">
 					<TableHead>
 						<TableRow>
-							<TableCell>Ator/Atriz</TableCell>
-							<TableCell align="right"><button style={btn}>Status</button></TableCell>
-							<TableCell align="right"><button style={btn}>Relevância</button></TableCell>
+							<TableCell><button style={btn} onClick={sortedName.bind(this)}>Ator/Atriz</button></TableCell>
+							<TableCell align="right"><button style={btn} onClick={sortedStatus.bind(this)}>Status</button></TableCell>
+							<TableCell align="right"><button style={btn} onClick={sortedRelevance.bind(this)}>Relevância</button></TableCell>
 							<TableCell align="right"><button style={btn} onClick={sortedPrice.bind(this)}>Preço</button></TableCell>
 						</TableRow>
 					</TableHead>
