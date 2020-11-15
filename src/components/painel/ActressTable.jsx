@@ -45,17 +45,20 @@ let ActressTable = () => {
 	let [loading, setLoading] = useState(true);
 	const classes = useStyles();
 
+	const fetchList = async () => {
+		try {
+			var { data } = await api.get("/actress/list");
+			setAtores(data);
+			setLoading(false);
+		} catch (error) {
+			setAtores([]);
+			setLoading(false);
+		}
+	};
+
 	useEffect(() => {
-		api.get("/actress/list")
-			.then(({ data }) => {
-				setAtores(data);
-				setLoading(false);
-			})
-			.catch(() => {
-				setAtores([]);
-				setLoading(false);
-			});
-	});
+		fetchList();
+	}, [atores, loading]);
 
 	let status = (params) => {
 		if (params) {
