@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
@@ -23,19 +23,29 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const [{ values, loading }, handleChange, handleSubmit] = useForm();
 export default function BasicTextFields() {
-  const [{ values, loading }, handleChange, handleSubmit] = useForm();
 
-  const saveProducer = () => {
+  /*const saveProducer = () => {
+      Api.post('/producer/create', 
+        {
+          "name": "Nome",
+          "user": {
+            "login": "login",
+            "password": "senha"
+      }}
+      ).then((response) => {
+        console.log(response.data)
+      })
     console.log(values);
-  };
+  };*/
+
   const classes = useStyles();
   return (
     <div>
       <Card className={classes.root} id="card">
         <CardContent>
-          <h1>Meus Dados</h1>
-          <form onSubmit={handleSubmit(saveProducer)} className={classes.root} autoComplete="off">
+          <form onSubmit={() => handleSubmit(saveProducer)} className={classes.root} autoComplete="off">
             <TextField 
                 onChange={handleChange}
                 className="producer" 
@@ -66,7 +76,11 @@ export default function BasicTextFields() {
           </form>
         </CardContent>
         <CardActions>
-          <ButtonSave />
+            <ThemeProvider theme={theme}>
+              <Button className={classes.root} onClick={loading ? "Enviando..." : "Enviar"}  variant="contained" color="primary">
+                Salvar
+              </Button>
+          </ThemeProvider>
         </CardActions>
       </Card>
     </div>
