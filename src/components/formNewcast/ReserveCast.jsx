@@ -15,13 +15,12 @@ export default function Asynchronous() {
 	const [values, handleChange] = useForm();
 	
 	const saveReserve = (event) => {
-		console.log(values)
 		event.preventDefault();
 		Api.post('/reserve/save/{idDaAtriz}',
 			{
 				"reserveDate": values.values.data,
 				"producer": {
-					"id": values.values.producer
+					"id": values.values.producer.id
 				}
 			}
 		).then((response) => {
@@ -63,7 +62,7 @@ export default function Asynchronous() {
 		}
 
 		(async () => {
-			const response = await api.get("/producer/18");
+			const response = await api.get("/producer/{byId}?");
 			setOptions([response.data]);
 		})();
 	}, [loading]);
@@ -80,6 +79,7 @@ export default function Asynchronous() {
 			<div>
 				<form onSubmit={saveReserve} className={classes.container} noValidate>
 					<TextField
+						className="data"
 						name="data"
 						onChange={(event) => handleChange (event)}
 						id="date"
@@ -92,12 +92,12 @@ export default function Asynchronous() {
 						}}
 					/>
 				</form>
-				<div className="producer">
+				<div className="prod">
 					<Autocomplete
 						name="producer"
 						onInputChange={(event, newValue) => {
 							var evento = {
-								target: { id: "producer", value: newValue }
+								target: { name: "producer", value: newValue }
 							}
 							handleChange(evento)
 						}}
