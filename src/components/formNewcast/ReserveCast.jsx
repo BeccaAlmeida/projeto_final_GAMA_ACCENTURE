@@ -5,7 +5,7 @@ import Autocomplete from "@material-ui/lab/Autocomplete";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import Button from '@material-ui/core/Button';
 import useForm from '../../hooks/useForm';
-import api from "../../service/api";
+import Api from "../../service/api";
 import regeneratorRuntime from "regenerator-runtime";
 
 export default function Asynchronous() {
@@ -62,7 +62,7 @@ export default function Asynchronous() {
 		}
 
 		(async () => {
-			const response = await api.get("/producer/{byId}?");
+			const response = await Api.get("/producer/18");
 			setOptions([response.data]);
 		})();
 	}, [loading]);
@@ -76,31 +76,28 @@ export default function Asynchronous() {
 	const classes = useStyles();
 	return (
 		<div className="reservDate">
-			<div>
-				<form onSubmit={saveReserve} className={classes.container} noValidate>
-					<TextField
-						className="data"
-						name="data"
-						onChange={(event) => handleChange (event)}
-						id="date"
-						label="Inicio das Gravações"
-						type="date"
-						onChange={handleChange}
-						className={classes.textField}
-						InputLabelProps={{
-							shrink: true,
-						}}
-					/>
-				</form>
+			<form onSubmit={saveReserve} className={classes.container} noValidate>
+				<TextField
+					className="data"
+					name="data"
+					onChange={(event) => handleChange (event)}
+					id="date"
+					label="Inicio das Gravações"
+					type="date"
+					className={classes.textField}
+					InputLabelProps={{
+						shrink: true,
+					}}
+				/>
 				<div className="prod">
 					<Autocomplete
 						name="producer"
 						onInputChange={(event, newValue) => {
 							var evento = {
-								target: { name: "producer", value: newValue }
+							target: { name: "producer", value: newValue }
 							}
 							handleChange(evento)
-						}}
+							}}
 						style={{ width: 300 }}
 						open={open}
 						onOpen={() => setOpen(true)}
@@ -115,8 +112,8 @@ export default function Asynchronous() {
 								label="Produtor/Produtora"
 								variant="outlined"
 								InputProps={{
-									...params.InputProps,
-									endAdornment: (
+										...params.InputProps,
+										endAdornment: (
 										<React.Fragment>
 											{loading ? (
 												<CircularProgress
@@ -125,19 +122,19 @@ export default function Asynchronous() {
 												/>
 											) : null}
 											{params.InputProps.endAdornment}
-										</React.Fragment>
+										</React.Fragment>	
 									),
 								}}
 							/>
 						)}
 					/>
-					<ThemeProvider theme={theme}>
-                        <Button className={classes.root} type="submit" variant="contained" color="primary">
-                             Salvar
-                        </Button>
-                    </ThemeProvider>
 				</div>
-			</div>
+				<ThemeProvider theme={theme}>
+					<Button className={classes.root} type="submit" variant="contained" color="primary">
+						Salvar
+					</Button>
+				</ThemeProvider>
+			</form>				
 		</div>
 	);
 }
