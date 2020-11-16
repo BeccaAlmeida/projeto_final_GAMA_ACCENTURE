@@ -5,7 +5,7 @@ import { Grid } from "@material-ui/core";
 
 const NewCast = () => (
 	<CustomGrid>
-		<Grid>
+		<Grid lg={12} md={12} sm={12} xs={12}>
 			<NewProducer />
 		</Grid>
 	</CustomGrid>

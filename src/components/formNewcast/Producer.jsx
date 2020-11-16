@@ -3,11 +3,13 @@ import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import CircularProgress from "@material-ui/core/CircularProgress";
 import api from "../../service/api";
+import castForm from "../../hooks/castForm";
 
 export default function Asynchronous() {
 	const [open, setOpen] = React.useState(false);
 	const [options, setOptions] = React.useState([]);
 	const loading = open && options.length === 0;
+	const [values, handleChange] = castForm();
 
 	useEffect(() => {
 		if (!loading) {
@@ -15,7 +17,7 @@ export default function Asynchronous() {
 		}
 
 		(async () => {
-			const response = await api.get("/producer/18");
+			const response = await api.get("/producer/2");
 			setOptions([response.data]);
 		})();
 	}, [loading]);
@@ -29,7 +31,6 @@ export default function Asynchronous() {
 	return (
 		<div className="producer">
 			<Autocomplete
-				style={{ width: 300 }}
 				open={open}
 				onOpen={() => setOpen(true)}
 				onClose={() => setOpen(false)}
@@ -37,6 +38,17 @@ export default function Asynchronous() {
 				getOptionLabel={(option) => option.name}
 				options={options}
 				loading={loading}
+				onInputChange={(event, newValue) => {
+					if (newValue) {
+						var selected = options.find(
+							(item) => item.name === newValue
+						);
+
+						if (selected) {
+							handleChange("produtor", selected.id);
+						}
+					}
+				}}
 				renderInput={(params) => (
 					<TextField
 						{...params}

@@ -16,7 +16,8 @@ const App = (props) => {
 			return (
 				<React.Fragment>
 					<SideBarItem to="/informacoes">Informações</SideBarItem>
-					<SideBarItem to="/newCast">+ Novo Elenco</SideBarItem>
+					<SideBarItem to="/indicacao">Indicação de cast</SideBarItem>
+					<SideBarItem to="/newCast">+ Novo Reserva</SideBarItem>
 					<SideBarItem to="/newActress">+ Novo Usuario</SideBarItem>
 					<SideBarItem to="/newProducer">+ Novo produtor</SideBarItem>
 				</React.Fragment>
@@ -24,7 +25,6 @@ const App = (props) => {
 		}
 	};
 
-	console.log("typeUserEnumeration", typeUserEnumeration);
 	return props.auth ? (
 		<div>
 			<Wrapper size="250px" transition="all 0.3s">

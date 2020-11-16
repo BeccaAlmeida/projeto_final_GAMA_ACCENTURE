@@ -7,6 +7,7 @@ import NovoElenco from "./newCast";
 import NewActress from "./newActress";
 import NewProducer from "./newProducer";
 import PrivateRoute from "../components/PrivateRoute";
+import IndicacaoCast from "./indicacaoCast";
 
 const Pages = () => (
 	<Switch>
@@ -16,6 +17,7 @@ const Pages = () => (
 		<PrivateRoute path="/newCast" component={NovoElenco} />,
 		<PrivateRoute path="/newActress" component={NewActress} />,
 		<PrivateRoute path="/newProducer" component={NewProducer} />,
+		<PrivateRoute path="/indicacao" component={IndicacaoCast} />,
 	</Switch>
 );
 
