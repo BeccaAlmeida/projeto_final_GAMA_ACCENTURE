@@ -6,8 +6,9 @@ import Informacoes from "./informacoes";
 import NovoElenco from "./newCast";
 import NewActress from "./newActress";
 import NewProducer from "./newProducer";
-import MyReserves from './reservas';
+import MyReserves from "./reservas";
 import PrivateRoute from "../components/PrivateRoute";
+import IndicacaoCast from "./indicacaoCast";
 
 const Pages = () => (
 	<Switch>

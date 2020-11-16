@@ -12,12 +12,7 @@ const auth = (login, password) => {
 				usuarios.includes(login) &&
 				password.toLowerCase() === "123456"
 			) {
-				store.dispatch({
-					type: ACTIONS.SET_AUTH,
-					data: true,
-				});
-
-				if (login === "atriz" || login === "autor") {
+				if (login === "atriz" || login === "ator") {
 					store.dispatch({
 						type: ACTIONS.SET_USER,
 						data: {
@@ -36,6 +31,11 @@ const auth = (login, password) => {
 						},
 					});
 				}
+
+				store.dispatch({
+					type: ACTIONS.SET_AUTH,
+					data: true,
+				});
 
 				resolve();
 			} else {

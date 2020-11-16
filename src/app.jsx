@@ -8,16 +8,30 @@ import Content from "./components/layout/Content";
 import MenuContainer from "./components/layout/MenuContainer";
 
 const App = (props) => {
+	const { usuario } = props;
+	const { typeUserEnumeration } = usuario;
+
+	const getSideBar = () => {
+		if (typeUserEnumeration === 2) {
+			return (
+				<React.Fragment>
+					<SideBarItem to="/informacoes">Informações</SideBarItem>
+					<SideBarItem to="/newCast">+ Novo Elenco</SideBarItem>
+					<SideBarItem to="/newActress">+ Novo Usuario</SideBarItem>
+					<SideBarItem to="/newProducer">+ Novo produtor</SideBarItem>
+					<SideBarItem to="/reservas">Minhas reservas</SideBarItem>
+				</React.Fragment>
+			);
+		}
+	};
+
 	return props.auth ? (
 		<div>
 			<Wrapper size="250px" transition="all 0.3s">
 				<Sidebar size="250px">
 					<SideBarItem to="/painel">Painel</SideBarItem>
-					<SideBarItem to="/informacoes">Informações</SideBarItem>
-					<SideBarItem to="/newCast">+ Novo Elenco</SideBarItem>
-					<SideBarItem to="/newActress">+ Novo Usuario</SideBarItem>
-					<SideBarItem to="/newProducer">+ Novo produtor</SideBarItem>
-					<SideBarItem to="/reservas">minhas reservas</SideBarItem>
+
+					{getSideBar()}
 				</Sidebar>
 
 				<Content size="250px">

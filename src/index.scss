@@ -1,64 +1,64 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Poppins;
-    background: #eee;
-    text-align: center;
-    flex-wrap: wrap;
+	margin: 0;
+	padding: 0;
+	font-family: Poppins;
+	background: #eee;
+	text-align: center;
+	flex-wrap: wrap;
 }
 
 .h-view {
-    height: 100vh;
+	height: 100vh;
 }
 
-#card {
-    background-color: #906cda;
-}
-
+// #card {
+//     background-color: #906cda;
+// }
+//
 #Button {
-    flex-direction: column;
-    flex-wrap: wrap;
-    margin: 10px;
-    margin-top: 20px;
-    width: 120px;
+	flex-direction: column;
+	flex-wrap: wrap;
+	margin: 10px;
+	margin-top: 20px;
+	width: 120px;
 }
 
 .textField {
-    margin: 0 auto;
-    width: 200;
+	margin: 0 auto;
+	width: 200;
 }
 
 .formControl {
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    min-width: 180;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	min-width: 180;
 }
 
 .actress {
-    margin-top: 10px;
-    margin-right: 10px;
-    margin-bottom: 10px;
+	margin-top: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
 }
 
 .producer {
-    margin-right: 10px;
-    margin-bottom: 10px;
+	margin-right: 10px;
+	margin-bottom: 10px;
 }
 
 .combo-box-demo2 {
-    width: 100;
+	width: 100;
 }
 
 .combo-box-demo1 {
-    width: 100;
+	width: 100;
 }
 
 #data {
-    margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 
 .prod {
-    margin-bottom: 10px;
+	margin-bottom: 10px;
 }
