@@ -33,7 +33,6 @@ export default function BasicTextFields() {
 	const [values, handleChange] = useForm();
 	const [options, setOptions] = React.useState([]);
 
-<<<<<<< HEAD
 	const saveActress = (event) => {
 		event.preventDefault();
 		const {
@@ -220,126 +219,6 @@ export default function BasicTextFields() {
 			</CardContent>
 		</Card>
 	);
-=======
-  const saveActress = (event) => {
-    event.preventDefault();
-      Api.post('/actress/create', 
-        {
-            "name": values.values.nome,
-            "gender": values.values.gender,
-            "price": values.values.price,
-            "relevance": values.values.relevance,
-            "genre": values.values.genre,
-            "status": false,
-            "user": {
-                "login": values.values.login,
-                "password": values.values.password
-            }
-        }
-      ).then((response) => {
-        console.log(response.data)
-      })
-      .catch(error => {
-        console.log(error.response)
-    });
-    console.log(values);
-  }
-    const classes = useStyles();
-    return (
-        <div>
-            <Card className={classes.root} id="card">
-                <CardContent>
-                    <h1>Meus Dados</h1>
-                    <form onSubmit={saveActress} className={classes.root} noValidate autoComplete="off">
-                        <TextField
-                            name="nome"
-                            onChange={(event) => handleChange (event)}
-                            className="actress"
-                            id="{actress.name}"
-                            type="text"
-                            label="Ator"
-                            placeholder="name Actress"
-                            variant="outlined"
-                        />
-                        <Autocomplete
-                            name="gender"
-                            onInputChange={(event, newValue) => {
-                                var evento = {
-                                target:{name: "gender", value: newValue}
-                            }
-                            handleChange(evento)                             
-                            }}
-                            id="combo-box-demo1"
-                            type="text"
-                            options={gender}
-                            getOptionLabel={(option) => option.gender}
-                            renderInput={(params) => <TextField {...params} label="Sexo" variant="outlined" />}
-                        />
-                        <Autocomplete
-                            name="genre"
-                            onInputChange={(event, newValue) => {
-                                var evento = {
-                                target:{name: "genre", value: newValue}
-                            }
-                            handleChange(evento)                             
-                            }}
-                            id="combo-box-demo2"
-                            type="text"
-                            options={genre}
-                            getOptionLabel={(option) => option.genre}
-                            renderInput={(params) => <TextField {...params} label="Gênero que atua" variant="outlined" />}
-                        />
-                        <TextField
-                            name="price"
-                            onChange={(event) => handleChange (event)}
-                            className="price"
-                            id="{actress.price}"
-                            type="price"
-                            label="Preço"
-                            placeholder="price"
-                            variant="outlined"
-                        />
-                        <TextField
-                            name="relevance"
-                            onChange={(event) => handleChange (event)}
-                            className="relevancia"
-                            id="{actress.relevancia}"
-                            type="number"
-                            label="Relevancia"
-                            placeholder="Relevance"
-                            variant="outlined"
-                        />
-                        <TextField
-                            name="login"
-                            onChange={(event) => handleChange (event)}
-                            className="email"
-                            id="{actress.email}"
-                            type="email"
-                            label="E-mail"
-                            placeholder="email"
-                            variant="outlined"
-                        />
-                        <TextField
-                            name="password"
-                            onChange={(event) => handleChange (event)}
-                            className="password"
-                            id="{actress.password}"
-                            type="password"
-                            label="Senha"
-                            placeholder="Password"
-                            variant="outlined"
-                        />
-                        <ThemeProvider theme={theme}>
-                            <Button className={classes.root} type="submit" variant="contained" color="primary">
-                                Salvar
-                            </Button>
-                        </ThemeProvider>
-                    </form>
-                </CardContent>
-            </Card>
-        </div>
-    );
->>>>>>> b572f6b094ac1f2340daf1a508260de662236227
 }
 const theme = createMuiTheme({
 	palette: {
