@@ -16,10 +16,10 @@ const App = (props) => {
 			return (
 				<React.Fragment>
 					<SideBarItem to="/informacoes">Informações</SideBarItem>
-					<SideBarItem to="/indicacao">Indicação de cast</SideBarItem>
-					<SideBarItem to="/newCast">+ Novo Reserva</SideBarItem>
+					<SideBarItem to="/newCast">+ Novo Elenco</SideBarItem>
 					<SideBarItem to="/newActress">+ Novo Usuario</SideBarItem>
 					<SideBarItem to="/newProducer">+ Novo produtor</SideBarItem>
+					<SideBarItem to="/reservas">Minhas reservas</SideBarItem>
 				</React.Fragment>
 			);
 		}
@@ -30,6 +30,7 @@ const App = (props) => {
 			<Wrapper size="250px" transition="all 0.3s">
 				<Sidebar size="250px">
 					<SideBarItem to="/painel">Painel</SideBarItem>
+
 					{getSideBar()}
 				</Sidebar>
 
