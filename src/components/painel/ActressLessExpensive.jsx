@@ -4,7 +4,7 @@ import api from "../../service/api";
 
 export class ActressLessExpensive extends Component {
 	state = {
-		title: "Ator/Atriz menos caro",
+		title: "Ator/Atriz mais barato",
 		value: null,
 		load: true,
 	};
